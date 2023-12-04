@@ -1,14 +1,16 @@
 // ParametricDFA.java
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ParametricDFA {
-    private final List<Distance> distance;
-    private final List<Transition> transitions;
-    private final byte maxDistance;
-    private final int transitionStride;
-    private final int diameter;
+    private final List<Distance> distance;       // Lista delle distanze associate agli stati del DFA
+    private final List<Transition> transitions;   // Lista delle transizioni tra gli stati del DFA
+    private final byte maxDistance;               // Massima distanza consentita
+    private final int transitionStride;           // Dimensione delle transizioni
+    private final int diameter;                   // Diametro del DFA
 
+    // Costruttore che inizializza un ParametricDFA con le informazioni necessarie
     public ParametricDFA(List<Distance> distance, List<Transition> transitions, byte maxDistance, int transitionStride, int diameter) {
         this.distance = distance;
         this.transitions = transitions;
@@ -17,10 +19,12 @@ public class ParametricDFA {
         this.diameter = diameter;
     }
 
+    // Metodo statico che restituisce uno stato iniziale
     public static ParametricState initialState() {
         return new ParametricState(1, 0);
     }
 
+    // Verifica se uno stato è un "sink" rispetto al prefisso della query
     public boolean isPrefixSink(ParametricState state, int queryLen) {
         if (state.isDeadEnd()) {
             return true;
@@ -43,10 +47,12 @@ public class ParametricDFA {
         }
     }
 
+    // Costruisce un DFA standard o personalizzato a seconda del parametro "prefix"
     public DFA buildDFA(String query, boolean prefix) {
         return buildCustomDFA(query, prefix, false);
     }
 
+    // Costruisce un DFA personalizzato a seconda dei parametri specificati
     public DFA buildCustomDFA(String query, boolean prefix, boolean useAppliedDistance) {
         char[] queryChars = query.toCharArray();
         Alphabet alphabet = Alphabet.forQueryChars(queryChars);
@@ -89,10 +95,12 @@ public class ParametricDFA {
         return dfaBuilder.build();
     }
 
+    // Restituisce il numero totale di stati nel DFA
     public int numStates() {
         return transitions.size() / transitionStride;
     }
 
+    // Calcola la distanza per uno stato e una lunghezza di query specificati
     public Distance distance(ParametricState state, int queryLen) {
         int remainingOffset = queryLen - state.getOffset();
         if (state.isDeadEnd() || remainingOffset >= diameter) {
@@ -104,17 +112,20 @@ public class ParametricDFA {
         }
     }
 
+    // Calcola la distanza applicata per uno stato specificato
     public Distance appliedDistance(ParametricState state) {
         int index = diameter * state.getShapeId();
         Distance d = distance.get(index);
         return d.getDistance() > maxDistance ? Distance.atLeast(d.getDistance()) : Distance.exact(d.getDistance());
     }
 
+    // Restituisce la transizione per uno stato e un valore chi specificati
     public Transition transition(ParametricState state, int chi) {
         assert chi < transitionStride;
         return transitions.get(transitionStride * state.getShapeId() + chi);
     }
 
+    // Costruisce un ParametricDFA da un NFA (Automaton di Levenshtein non deterministico)
     public static ParametricDFA fromNFA(LevenshteinNFA nfa) {
         Index<MultiState> index = new Index<>();
         index.getOrAllocate(MultiState.empty());

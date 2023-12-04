@@ -1,7 +1,7 @@
 // Classe generica che rappresenta una coppia di oggetti
 public class Pair<K, V> {
-    private K first;
-    private V second;
+    private K first;  // Il primo elemento della coppia
+    private V second; // Il secondo elemento della coppia
 
     // Costruttore che inizializza la coppia con due oggetti
     public Pair(K first, V second) {
@@ -19,6 +19,7 @@ public class Pair<K, V> {
         return second;
     }
 
+    // Override del metodo toString per ottenere una rappresentazione testuale della coppia
     @Override
     public String toString() {
         return "Pair{" +

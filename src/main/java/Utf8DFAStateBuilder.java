@@ -5,7 +5,7 @@
 public class Utf8DFAStateBuilder {
     private Utf8DFABuilder dfaBuilder;
     private int stateId;
-    public Utf8DFAStateBuilder(Utf8DFABuilder dfaBuilder, int stateId, int[] defaultSuccessor) {
+    public Utf8DFAStateBuilder(Utf8DFABuilder dfaBuilder, int stateId) {
         this.dfaBuilder = dfaBuilder;
         this.stateId = stateId;
     }
@@ -15,6 +15,7 @@ public class Utf8DFAStateBuilder {
         // delle transizioni sarà diversa da quella in Rust.
         // Questo è un esempio semplificato che non gestisce la codifica UTF-8.
         int codePoint = Character.codePointAt(new char[]{chr}, 0);
+        // Aggiungi la transizione all'automa in costruzione
         dfaBuilder.addTransition(stateId, codePoint, toStateId);
     }
 }

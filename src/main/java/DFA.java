@@ -27,6 +27,7 @@ public class DFA {
     // Stato sink costante. Vedi [DFA](./index.html)
     public static final int SINK_STATE = 0;
 
+    // Costruttore che inizializza l'automa DFA con le transizioni, le distanze e lo stato iniziale.
     public DFA(int[][] transitions, Distance[] distances, int initial_state) {
         this.transitions = transitions;
         this.distances = distances;
@@ -74,10 +75,8 @@ public class DFA {
         return transitions[from_state_id][b & 0xFF];
     }
 
-    
+    // Metodo main per eseguire test sull'automa DFA.
     public static void main(String[] args) {
-
-        //DFA,Distance,Utf
         // Creazione di un costruttore DFA con un numero massimo di stati
         Utf8DFABuilder builder = new Utf8DFABuilder(2);
 
