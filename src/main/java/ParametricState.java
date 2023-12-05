@@ -27,4 +27,12 @@ public class ParametricState {
     public int getOffset() {
         return offset;
     }
+
+    @Override
+    public String toString() {
+        return "ParametricState{" +
+                "shapeId=" + shapeId +
+                ", offset=" + offset +
+                '}';
+    }
 }

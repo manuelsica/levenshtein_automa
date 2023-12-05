@@ -51,4 +51,13 @@ public class NFAState implements Comparable<NFAState> {
     public boolean isInTranspose() {
         return inTranspose;
     }
+
+    @Override
+    public String toString() {
+        return "NFAState{" +
+                "offset=" + offset +
+                ", distance=" + distance +
+                ", inTranspose=" + inTranspose +
+                '}';
+    }
 }

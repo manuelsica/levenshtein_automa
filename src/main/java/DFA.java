@@ -1,6 +1,7 @@
 // DFA.java
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 /**
  * Implementazione di un Automi Finiti Deterministici per
@@ -73,6 +74,15 @@ public class DFA {
      */
     public int transition(int from_state_id, byte b) {
         return transitions[from_state_id][b & 0xFF];
+    }
+
+    @Override
+    public String toString() {
+        return "DFA{" +
+                "transitions=" + Arrays.toString(transitions) +
+                ", distances=" + Arrays.toString(distances) +
+                ", initial_state=" + initial_state +
+                '}';
     }
 
     // Metodo main per eseguire test sull'automa DFA.

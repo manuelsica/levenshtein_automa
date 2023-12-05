@@ -17,4 +17,12 @@ public class Transition {
         // Restituisci il nuovo stato parametrico
         return new ParametricState(destShapeId, newOffset);
     }
+
+    @Override
+    public String toString() {
+        return "Transition{" +
+                "destShapeId=" + destShapeId +
+                ", deltaOffset=" + deltaOffset +
+                '}';
+    }
 }

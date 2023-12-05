@@ -52,4 +52,11 @@ public class MultiState {
 
         return minOffset;
     }
+
+    @Override
+    public String toString() {
+        return "MultiState{" +
+                "states=" + states +
+                '}';
+    }
 }

@@ -18,4 +18,12 @@ public class Utf8DFAStateBuilder {
         // Aggiungi la transizione all'automa in costruzione
         dfaBuilder.addTransition(stateId, codePoint, toStateId);
     }
+
+    @Override
+    public String toString() {
+        return "Utf8DFAStateBuilder{" +
+                "dfaBuilder=" + dfaBuilder +
+                ", stateId=" + stateId +
+                '}';
+    }
 }

@@ -82,4 +82,16 @@ public class Utf8DFABuilder {
     public DFA build() {
         return new DFA(transitions, distances, initialState);
     }
+
+    @Override
+    public String toString() {
+        return "Utf8DFABuilder{" +
+                "index=" + index +
+                ", distances=" + Arrays.toString(distances) +
+                ", transitions=" + Arrays.toString(transitions) +
+                ", initialState=" + initialState +
+                ", numStates=" + numStates +
+                ", maxNumStates=" + maxNumStates +
+                '}';
+    }
 }

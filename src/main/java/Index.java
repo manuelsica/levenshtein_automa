@@ -48,4 +48,12 @@ public class Index<I> {
     public I getFromId(int id) {
         return items.get(id);
     }
+
+    @Override
+    public String toString() {
+        return "Index{" +
+                "index=" + index +
+                ", items=" + items +
+                '}';
+    }
 }

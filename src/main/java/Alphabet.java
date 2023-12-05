@@ -62,4 +62,11 @@ public class Alphabet {
         // Crea e restituisci un nuovo Alfabeto con l'insieme di caratteri generato.
         return new Alphabet(charset);
     }
+
+    @Override
+    public String toString() {
+        return "Alphabet{" +
+                "charset=" + charset +
+                '}';
+    }
 }

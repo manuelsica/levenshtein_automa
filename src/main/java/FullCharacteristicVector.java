@@ -33,4 +33,11 @@ public class FullCharacteristicVector {
             return (left | right) & mask;
         }
     }
+
+    @Override
+    public String toString() {
+        return "FullCharacteristicVector{" +
+                "vector=" + vector +
+                '}';
+    }
 }

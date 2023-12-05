@@ -105,11 +105,19 @@ public class LevenshteinNFA {
         return (shift & 1) == 1;
     }
 
+    @Override
+    public String toString() {
+        return "LevenshteinNFA{" +
+                "maxDistance=" + maxDistance +
+                ", damerau=" + damerau +
+                '}';
+    }
+
     // Metodo main di esempio
     public static void main(String[] args) {
         // Esempi di utilizzo
         LevenshteinNFA levenshteinNFA = new LevenshteinNFA(4, true);
         Distance distance = levenshteinNFA.computeDistance("kitten", "sitting");
-        System.out.println(distance);  // Stampa: Exact(3)
+        System.out.println(distance);
     }
 }

@@ -166,4 +166,26 @@ public class ParametricDFA {
 
         return new ParametricDFA(distance, transitions, maxDistance, numChi, multistateDiameter);
     }
+
+    @Override
+    public String toString() {
+        return "ParametricDFA{" +
+                "distance=" + distance +
+                ", transitions=" + transitions +
+                ", maxDistance=" + maxDistance +
+                ", transitionStride=" + transitionStride +
+                ", diameter=" + diameter +
+                '}';
+    }
+
+    public static void main(String [] args){
+
+        ParametricDFA parametricDFA = ParametricDFA.fromNFA((new LevenshteinNFA(7, true)));
+
+        ParametricState state = new ParametricState(1, 0);
+        int queryLen = "kitten".length();
+
+        Distance distance = parametricDFA.distance(state ,queryLen);
+        System.out.println(distance);
+    }
 }

@@ -54,4 +54,13 @@ public class ParametricStateIndex {
     public ParametricState get(int stateId) {
         return stateQueue.get(stateId);
     }
+
+    @Override
+    public String toString() {
+        return "ParametricStateIndex{" +
+                "stateIndex=" + stateIndex +
+                ", stateQueue=" + stateQueue +
+                ", numOffsets=" + numOffsets +
+                '}';
+    }
 }
