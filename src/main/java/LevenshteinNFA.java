@@ -54,37 +54,76 @@ public class LevenshteinNFA {
         return multistateDistance(currentState, queryChars.length);
     }
 
-    // Esegue una transizione semplice per uno stato e un simbolo specificati
+    // Definisce un metodo per eseguire una transizione semplice in un automa a stati finiti non deterministico (NFA)
+    // per uno stato e un simbolo specificati.
     private void simpleTransition(NFAState state, long symbol, MultiState multistate) {
+        // Controlla se la distanza dello stato corrente è minore della distanza massima consentita.
         if (state.getDistance() < maxDistance) {
-            // Inserimento
-            multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, false));
-            // Eliminazione
-            multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance() + 1, false));
 
+            // Aggiunge uno stato al MultiState con la stessa posizione dell'offset dello stato corrente
+            // ma con la distanza incrementata di 1 e non in transposizione.
+            /*
+            L'inserimento è rappresentato da uno stato che ha lo stesso offset dello stato corrente ma con una distanza incrementata.
+            Questo rappresenta l'aggiunta di un nuovo carattere nella stringa di input.
+             */
+            multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, false)); //Inserimento
+
+            // Aggiunge uno stato al MultiState con l'offset incrementato di 1 e la distanza incrementata di 1,
+            // e non in transposizione.
+             /*
+            La sostituzione è implicita quando si crea un nuovo stato con l'offset incrementato e la distanza incrementata.
+            Questo rappresenta la sostituzione di un carattere nella stringa di input con un altro carattere.
+             */
+            multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance() + 1, false));//Sostituzione
+
+            // Itera per ogni possibile distanza a partire da 1 fino alla distanza massima meno la distanza corrente.
+            /*
+            Questo ciclo permette di gestire le sostituzioni multiple che possono avvenire quando si considerano errori di battitura più complessi o
+            stringhe con più errori.
+             */
             for (int d = 1; d <= maxDistance - state.getDistance(); d++) {
-                // Sostituzione
+
+                // Controlla se il bit nella posizione 'd' del simbolo è 1 (true).
                 if (extractBit(symbol, d)) {
-                    // Trasposizione (Damerau)
-                    multistate.addState(new NFAState(state.getOffset() + 1 + d, state.getDistance() + d, false));
+
+                    // Se il bit è 1, aggiunge uno stato al MultiState con l'offset incrementato di 1 + d
+                    // e la distanza incrementata di d, e non in transposizione.
+
+                    multistate.addState(new NFAState(state.getOffset() + 1 + d, state.getDistance() + d, false));//Sostituzione multipla
                 }
             }
-            // Copia senza modifiche
+
+            // Se l'opzione Damerau è abilitata e il bit nella posizione 1 del simbolo è 1,
+            // aggiunge uno stato al MultiState con la stessa posizione dell'offset dello stato corrente
+            // ma con la distanza incrementata di 1 e in transposizione.
+            /*
+            La transposizione, se abilitata (indicata dalla variabile damerau), è rappresentata da uno stato che ha lo stesso offset e una distanza incrementata,
+            ma con il flag di transposizione impostato su true. Questo rappresenta lo scambio di due caratteri adiacenti nella stringa di input.
+        */
             if (damerau && extractBit(symbol, 1)) {
-                multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, true));
+                multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, true));//Trasposizione
             }
         }
-        // Copia con trasposizione
+
+        // Controlla se il bit nella posizione 0 del simbolo è 1.
+        /*
+                    La cancellazione è rappresentata da uno stato che ha l'offset incrementato ma la stessa distanza dello stato corrente.
+                    Questo rappresenta la rimozione di un carattere dalla stringa di input.
+        */
         if (extractBit(symbol, 0)) {
-            multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance(), false));
+            // Se il bit è 1, aggiunge uno stato al MultiState con l'offset incrementato di 1
+            // e la stessa distanza dello stato corrente, e non in transposizione.
+            multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance(), false));//Cancellazione
         }
 
+        // Se lo stato corrente è in transposizione e il bit nella posizione 0 del simbolo è 1,
+        // aggiunge uno stato al MultiState con l'offset incrementato di 2, la stessa distanza dello stato corrente,
+        // e non in transposizione.
         if (state.isInTranspose() && extractBit(symbol, 0)) {
             multistate.addState(new NFAState(state.getOffset() + 2, state.getDistance(), false));
         }
-
-        //Cancellazione non si aggiunge nulla
     }
+
 
     // Esegue una transizione per uno stato corrente e un vettore chi specificati
     void transition(MultiState currentState, MultiState destState, long shiftedChiVector) {
