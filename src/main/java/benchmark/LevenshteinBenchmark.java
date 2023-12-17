@@ -18,7 +18,6 @@ public class LevenshteinBenchmark {
     private ParametricDFA parametricDfaDistance1WithTranspose;
     private ParametricDFA parametricDfaDistance2WithTranspose;
     private ParametricDFA parametricDfaDistance3WithTranspose;
-
     private ParametricDFA parametricDfaDistance4WithTranspose;
 
     @Setup
@@ -70,7 +69,7 @@ public class LevenshteinBenchmark {
 
     @Benchmark
     public void benchBuildDfaDistance4WithTranspose() {
-        DFA dfa = parametricDfaDistance3WithTranspose.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance4WithTranspose.buildDFA("Levenshtein", false);
     }
 
     // Metodo main per eseguire i benchmark
