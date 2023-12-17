@@ -1,0 +1,14 @@
+dontinline,*.*_all_jmhStub
+dontinline,*.*_avgt_jmhStub
+dontinline,*.*_sample_jmhStub
+dontinline,*.*_ss_jmhStub
+dontinline,*.*_thrpt_jmhStub
+inline,benchmark/LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose
+inline,benchmark/LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose
+inline,benchmark/LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose
+inline,benchmark/LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose
+inline,benchmark/LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose
+inline,benchmark/LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose
+inline,benchmark/LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose
+inline,benchmark/LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose
+inline,benchmark/LevenshteinBenchmark.setup
