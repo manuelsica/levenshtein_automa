@@ -1,4 +1,4 @@
-package benchmark;// benchmark.ParametricStateIndex.java
+package benchmark;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalInt;
@@ -19,7 +19,7 @@ public class ParametricStateIndex {
             this.stateIndex.add(OptionalInt.empty());
         }
 
-        // Inizializzazione della lista di benchmark.ParametricState per la coda degli stati
+        // Inizializzazione della lista di ParametricState per la coda degli stati
         this.stateQueue = new ArrayList<>(100);
     }
 
@@ -57,7 +57,7 @@ public class ParametricStateIndex {
 
     @Override
     public String toString() {
-        return "benchmark.ParametricStateIndex{" +
+        return " ParametricStateIndex{" +
                 "stateIndex=" + stateIndex +
                 ", stateQueue=" + stateQueue +
                 ", numOffsets=" + numOffsets +

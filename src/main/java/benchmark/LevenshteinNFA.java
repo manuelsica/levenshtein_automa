@@ -62,7 +62,7 @@ public class LevenshteinNFA {
         // Controlla se la distanza dello stato corrente è minore della distanza massima consentita.
         if (state.getDistance() < maxDistance) {
 
-            // Aggiunge uno stato al benchmark.MultiState con la stessa posizione dell'offset dello stato corrente
+            // Aggiunge uno stato al MultiState con la stessa posizione dell'offset dello stato corrente
             // ma con la distanza incrementata di 1 e non in transposizione.
             /*
             L'inserimento è rappresentato da uno stato che ha lo stesso offset dello stato corrente ma con una distanza incrementata.
@@ -70,7 +70,7 @@ public class LevenshteinNFA {
              */
             multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, false)); //Inserimento
 
-            // Aggiunge uno stato al benchmark.MultiState con l'offset incrementato di 1 e la distanza incrementata di 1,
+            // Aggiunge uno stato al MultiState con l'offset incrementato di 1 e la distanza incrementata di 1,
             // e non in transposizione.
              /*
             La sostituzione è implicita quando si crea un nuovo stato con l'offset incrementato e la distanza incrementata.
@@ -88,7 +88,7 @@ public class LevenshteinNFA {
                 // Controlla se il bit nella posizione 'd' del simbolo è 1 (true).
                 if (extractBit(symbol, d)) {
 
-                    // Se il bit è 1, aggiunge uno stato al benchmark.MultiState con l'offset incrementato di 1 + d
+                    // Se il bit è 1, aggiunge uno stato al MultiState con l'offset incrementato di 1 + d
                     // e la distanza incrementata di d, e non in transposizione.
 
                     multistate.addState(new NFAState(state.getOffset() + 1 + d, state.getDistance() + d, false));//Sostituzione multipla
@@ -96,7 +96,7 @@ public class LevenshteinNFA {
             }
 
             // Se l'opzione Damerau è abilitata e il bit nella posizione 1 del simbolo è 1,
-            // aggiunge uno stato al benchmark.MultiState con la stessa posizione dell'offset dello stato corrente
+            // aggiunge uno stato al MultiState con la stessa posizione dell'offset dello stato corrente
             // ma con la distanza incrementata di 1 e in transposizione.
             /*
             La transposizione, se abilitata (indicata dalla variabile damerau), è rappresentata da uno stato che ha lo stesso offset e una distanza incrementata,
@@ -113,13 +113,13 @@ public class LevenshteinNFA {
                     Questo rappresenta la rimozione di un carattere dalla stringa di input.
         */
         if (extractBit(symbol, 0)) {
-            // Se il bit è 1, aggiunge uno stato al benchmark.MultiState con l'offset incrementato di 1
+            // Se il bit è 1, aggiunge uno stato al MultiState con l'offset incrementato di 1
             // e la stessa distanza dello stato corrente, e non in transposizione.
             multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance(), false));//Cancellazione
         }
 
         // Se lo stato corrente è in transposizione e il bit nella posizione 0 del simbolo è 1,
-        // aggiunge uno stato al benchmark.MultiState con l'offset incrementato di 2, la stessa distanza dello stato corrente,
+        // aggiunge uno stato al MultiState con l'offset incrementato di 2, la stessa distanza dello stato corrente,
         // e non in transposizione.
         if (state.isInTranspose() && extractBit(symbol, 0)) {
             multistate.addState(new NFAState(state.getOffset() + 2, state.getDistance(), false));
@@ -148,7 +148,7 @@ public class LevenshteinNFA {
 
     @Override
     public String toString() {
-        return "benchmark.LevenshteinNFA{" +
+        return " LevenshteinNFA{" +
                 "maxDistance=" + maxDistance +
                 ", damerau=" + damerau +
                 '}';
@@ -157,8 +157,8 @@ public class LevenshteinNFA {
     // Metodo main di esempio
     public static void main(String[] args) {
         // Esempi di utilizzo
-        LevenshteinNFA levenshteinNFA = new LevenshteinNFA(4, true);
-        Distance distance = levenshteinNFA.computeDistance("bar", "biro");
+        LevenshteinNFA levenshteinNFA = new LevenshteinNFA(4, false);
+        Distance distance = levenshteinNFA.computeDistance("chold", "chold");
         System.out.println(distance);
     }
 }

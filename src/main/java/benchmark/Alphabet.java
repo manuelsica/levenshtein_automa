@@ -6,10 +6,10 @@ import java.util.List;
 
 // La classe rappresenta un alfabeto con vettori di caratteristiche associati per ogni carattere.
 public class Alphabet {
-    // Una lista di coppie, dove ogni coppia è composta da un carattere e il suo benchmark.FullCharacteristicVector associato.
+    // Una lista di coppie, dove ogni coppia è composta da un carattere e il suo FullCharacteristicVector associato.
     private final List<Pair<Character, FullCharacteristicVector>> charset;
 
-    // Costruttore che prende una lista di coppie carattere e benchmark.FullCharacteristicVector.
+    // Costruttore che prende una lista di coppie carattere e FullCharacteristicVector.
     public Alphabet(List<Pair<Character, FullCharacteristicVector>> charset) {
         // Crea una nuova ArrayList per memorizzare l'insieme di caratteri e copia gli elementi dalla lista di input.
         this.charset = new ArrayList<>(charset);
@@ -32,14 +32,14 @@ public class Alphabet {
         charList.sort(null);
         charList = new ArrayList<>(new HashSet<>(charList));
 
-        // Crea una lista per memorizzare le coppie di caratteri e i loro benchmark.FullCharacteristicVector associati.
+        // Crea una lista per memorizzare le coppie di caratteri e i loro FullCharacteristicVector associati.
         List<Pair<Character, FullCharacteristicVector>> charset = new ArrayList<>();
 
-        // Itera attraverso i caratteri univoci e crea benchmark.FullCharacteristicVector per ciascuno.
+        // Itera attraverso i caratteri univoci e crea FullCharacteristicVector per ciascuno.
         for (char c : charList) {
             List<Long> bits = new ArrayList<>();
 
-            // Itera attraverso ciascun carattere nell'array di input e imposta i bit corrispondenti in benchmark.FullCharacteristicVector.
+            // Itera attraverso ciascun carattere nell'array di input e imposta i bit corrispondenti in FullCharacteristicVector.
             for (char chr : queryChars) {
                 long chunkBits = 0L;
                 long bit = 1L;
@@ -54,10 +54,10 @@ public class Alphabet {
                 bits.add(chunkBits);
             }
 
-            // Aggiungi un valore Long zero per rappresentare la fine del benchmark.FullCharacteristicVector.
+            // Aggiungi un valore Long zero per rappresentare la fine del FullCharacteristicVector.
             bits.add(0L);
 
-            // Crea una coppia con il carattere univoco e il suo benchmark.FullCharacteristicVector associato.
+            // Crea una coppia con il carattere univoco e il suo FullCharacteristicVector associato.
             charset.add(new Pair<>(c, new FullCharacteristicVector(bits)));
         }
 

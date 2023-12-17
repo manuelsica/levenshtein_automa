@@ -1,4 +1,4 @@
-package benchmark;// benchmark.DFA.java
+package benchmark;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -25,10 +25,10 @@ public class DFA {
     private final Distance[] distances;
     private final int initial_state;
 
-    // Stato sink costante. Vedi [benchmark.DFA](./index.html)
+    // Stato sink costante.
     public static final int SINK_STATE = 0;
 
-    // Costruttore che inizializza l'automa benchmark.DFA con le transizioni, le distanze e lo stato iniziale.
+    // Costruttore che inizializza l'automa DFA con le transizioni, le distanze e lo stato iniziale.
     public DFA(int[][] transitions, Distance[] distances, int initial_state) {
         this.transitions = transitions;
         this.distances = distances;
@@ -63,7 +63,7 @@ public class DFA {
     }
 
     /**
-     * Restituisce il numero di stati nell'`benchmark.DFA`.
+     * Restituisce il numero di stati nell'`DFA`.
      */
     public int numStates() {
         return transitions.length;
@@ -78,16 +78,16 @@ public class DFA {
 
     @Override
     public String toString() {
-        return "benchmark.DFA{" +
+        return " DFA{" +
                 "transitions=" + Arrays.toString(transitions) +
                 ", distances=" + Arrays.toString(distances) +
                 ", initial_state=" + initial_state +
                 '}';
     }
 
-    // Metodo main per eseguire test sull'automa benchmark.DFA.
+    // Metodo main per eseguire test sull'automa DFA.
     public static void main(String[] args) {
-        // Creazione di un costruttore benchmark.DFA con un numero massimo di stati
+        // Creazione di un costruttore DFA con un numero massimo di stati
         Utf8DFABuilder builder = new Utf8DFABuilder(2);
 
         // Aggiunta degli stati all'automa

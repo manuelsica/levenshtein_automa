@@ -33,7 +33,7 @@ public class MultiState {
         states.add(newState);
     }
 
-    // Restituisce un nuovo oggetto benchmark.MultiState vuoto.
+    // Restituisce un nuovo oggetto MultiState vuoto.
     public static MultiState empty() {
         return new MultiState();
     }
@@ -57,7 +57,7 @@ public class MultiState {
 
     @Override
     public String toString() {
-        return "benchmark.MultiState{" +
+        return " MultiState{" +
                 "states=" + states +
                 '}';
     }

@@ -56,7 +56,7 @@ public class NFAState implements Comparable<NFAState> {
 
     @Override
     public String toString() {
-        return "benchmark.NFAState{" +
+        return " NFAState{" +
                 "offset=" + offset +
                 ", distance=" + distance +
                 ", inTranspose=" + inTranspose +

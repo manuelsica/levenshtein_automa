@@ -38,7 +38,7 @@ public class FullCharacteristicVector {
 
     @Override
     public String toString() {
-        return "benchmark.FullCharacteristicVector{" +
+        return "FullCharacteristicVector{" +
                 "vector=" + vector +
                 '}';
     }

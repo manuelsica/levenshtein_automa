@@ -1,6 +1,5 @@
 package benchmark;
 
-// benchmark.ParametricState.java
 public class ParametricState {
     private final int shapeId;
     private final int offset;
@@ -32,7 +31,7 @@ public class ParametricState {
 
     @Override
     public String toString() {
-        return "benchmark.ParametricState{" +
+        return " ParametricState{" +
                 "shapeId=" + shapeId +
                 ", offset=" + offset +
                 '}';

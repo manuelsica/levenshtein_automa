@@ -23,7 +23,7 @@ public class Utf8DFABuilder {
         this.maxNumStates = maxNumStates;
     }
 
-    // Metodo di fabbrica per creare un'istanza di benchmark.Utf8DFABuilder con la dimensione massima degli stati specificata
+    // Metodo di fabbrica per creare un'istanza di Utf8DFABuilder con la dimensione massima degli stati specificata
     public static Utf8DFABuilder withMaxNumStates(int maxNumStates) {
         return new Utf8DFABuilder(maxNumStates);
     }
@@ -80,14 +80,14 @@ public class Utf8DFABuilder {
         transitions[fromStateId][codePoint] = toStateId;
     }
 
-    // Costruisce l'automa a stati finiti deterministico (benchmark.DFA)
+    // Costruisce l'automa a stati finiti deterministico (DFA)
     public DFA build() {
         return new DFA(transitions, distances, initialState);
     }
 
     @Override
     public String toString() {
-        return "benchmark.Utf8DFABuilder{" +
+        return "Utf8DFABuilder{" +
                 "index=" + index +
                 ", distances=" + Arrays.toString(distances) +
                 ", transitions=" + Arrays.toString(transitions) +

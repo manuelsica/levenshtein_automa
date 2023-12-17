@@ -48,7 +48,7 @@ public class Distance implements Comparable<Distance> {
         return Integer.compare(this.distance, other.distance);
     }
 
-    // Override del metodo equals per confrontare due oggetti benchmark.Distance.
+    // Override del metodo equals per confrontare due oggetti Distance.
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;

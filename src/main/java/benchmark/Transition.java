@@ -1,6 +1,6 @@
 package benchmark;
 
-// benchmark.Transition.java
+
 public class Transition {
     private final int destShapeId;
     private final int deltaOffset;
@@ -22,7 +22,7 @@ public class Transition {
 
     @Override
     public String toString() {
-        return "benchmark.Transition{" +
+        return " Transition{" +
                 "destShapeId=" + destShapeId +
                 ", deltaOffset=" + deltaOffset +
                 '}';

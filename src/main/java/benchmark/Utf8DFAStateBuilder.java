@@ -1,7 +1,7 @@
 package benchmark;
 
 /**
- * Costruttore di stato per benchmark.DFA che opera su stringhe codificate in UTF-8.
+ * Costruttore di stato per DFA che opera su stringhe codificate in UTF-8.
  */
 public class Utf8DFAStateBuilder {
     private Utf8DFABuilder dfaBuilder;
@@ -22,7 +22,7 @@ public class Utf8DFAStateBuilder {
 
     @Override
     public String toString() {
-        return "benchmark.Utf8DFAStateBuilder{" +
+        return " Utf8DFAStateBuilder{" +
                 "dfaBuilder=" + dfaBuilder +
                 ", stateId=" + stateId +
                 '}';

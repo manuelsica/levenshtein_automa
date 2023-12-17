@@ -24,7 +24,7 @@ public class Pair<K, V> {
     // Override del metodo toString per ottenere una rappresentazione testuale della coppia
     @Override
     public String toString() {
-        return "benchmark.Pair{" +
+        return " Pair{" +
                 "first=" + first +
                 ", second=" + second +
                 '}';

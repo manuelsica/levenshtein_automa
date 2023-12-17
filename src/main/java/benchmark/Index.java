@@ -53,7 +53,7 @@ public class Index<I> {
 
     @Override
     public String toString() {
-        return "benchmark.Index{" +
+        return " Index{" +
                 "index=" + index +
                 ", items=" + items +
                 '}';

@@ -3,20 +3,20 @@ package benchmark;
 import java.util.ArrayList;
 import java.util.List;
 
-// Definizione della classe benchmark.ParametricDFA, che rappresenta un automa a stati finiti deterministico parametrico
+// Definizione della classe ParametricDFA, che rappresenta un automa a stati finiti deterministico parametrico
 public class ParametricDFA {
-    // Lista delle distanze associate agli stati del benchmark.DFA
+    // Lista delle distanze associate agli stati del DFA
     private final List<Distance> distance;
-    // Lista delle transizioni tra gli stati del benchmark.DFA
+    // Lista delle transizioni tra gli stati del DFA
     private final List<Transition> transitions;
     // Massima distanza consentita per le operazioni di editing
     private final byte maxDistance;
     // Dimensione delle transizioni (numero di possibili transizioni per stato)
     private final int transitionStride;
-    // Diametro del benchmark.DFA, che rappresenta il numero massimo di operazioni di editing consentite
+    // Diametro del DFA, che rappresenta il numero massimo di operazioni di editing consentite
     private final int diameter;
 
-    // Costruttore che inizializza un benchmark.ParametricDFA con le informazioni necessarie
+    // Costruttore che inizializza un ParametricDFA con le informazioni necessarie
     public ParametricDFA(List<Distance> distance, List<Transition> transitions, byte maxDistance, int transitionStride, int diameter) {
         this.distance = distance;
         this.transitions = transitions;
@@ -25,7 +25,7 @@ public class ParametricDFA {
         this.diameter = diameter;
     }
 
-    // Metodo statico che restituisce uno stato iniziale per il benchmark.DFA
+    // Metodo statico che restituisce uno stato iniziale per il DFA
     public static ParametricState initialState() {
         return new ParametricState(1, 0);
     }
@@ -60,12 +60,12 @@ public class ParametricDFA {
         }
     }
 
-    // Costruisce un benchmark.DFA standard o personalizzato a seconda del parametro "prefix"
+    // Costruisce un DFA standard o personalizzato a seconda del parametro "prefix"
     public DFA buildDFA(String query, boolean prefix) {
         return buildCustomDFA(query, prefix, false);
     }
 
-    // Costruisce un benchmark.DFA personalizzato a seconda dei parametri specificati
+    // Costruisce un DFA personalizzato a seconda dei parametri specificati
     public DFA buildCustomDFA(String query, boolean prefix, boolean useAppliedDistance) {
         // Converte la query in un array di caratteri
         char[] queryChars = query.toCharArray();
@@ -85,7 +85,7 @@ public class ParametricDFA {
         // Alloca lo stato iniziale
         int initialStateId = parametricStateIndex.getOrAllocate(initialState());
 
-        // Crea un costruttore per il benchmark.DFA UTF-8 con il numero massimo di stati
+        // Crea un costruttore per il DFA UTF-8 con il numero massimo di stati
         Utf8DFABuilder dfaBuilder = Utf8DFABuilder.withMaxNumStates(maxNumStates);
         // Calcola la maschera per il diametro
         int mask = (1 << diameter) - 1;
@@ -96,7 +96,7 @@ public class ParametricDFA {
             // Calcola la distanza per lo stato corrente
             Distance distance = useAppliedDistance ? appliedDistance(state) : distance(state, queryLen);
 
-            // Se il parametro "prefix" è true e lo stato è un sink, aggiunge lo stato al benchmark.DFA
+            // Se il parametro "prefix" è true e lo stato è un sink, aggiunge lo stato al DFA
             if (prefix && isPrefixSink(state, queryLen)) {
                 dfaBuilder.addState(stateId, distance, stateId);
             } else {
@@ -104,7 +104,7 @@ public class ParametricDFA {
                 Transition defaultTransition = transition(state, 0);
                 ParametricState defaultSuccessor = defaultTransition.apply(state);
                 int defaultSuccessorId = parametricStateIndex.getOrAllocate(defaultSuccessor);
-                // Aggiunge lo stato al benchmark.DFA con la transizione di default
+                // Aggiunge lo stato al DFA con la transizione di default
                 Utf8DFAStateBuilder stateBuilder = dfaBuilder.addState(stateId, distance, defaultSuccessorId);
                 // Itera su tutti i caratteri dell'alfabeto e aggiunge le transizioni corrispondenti
                 for (Pair<Character, FullCharacteristicVector> pair : alphabet.getCharset()) {
@@ -119,12 +119,12 @@ public class ParametricDFA {
             }
         }
 
-        // Imposta lo stato iniziale del benchmark.DFA e costruisce il benchmark.DFA
+        // Imposta lo stato iniziale del DFA e costruisce il DFA
         dfaBuilder.setInitialState(initialStateId);
         return dfaBuilder.build();
     }
 
-    // Restituisce il numero totale di stati nel benchmark.DFA
+    // Restituisce il numero totale di stati nel DFA
     public int numStates() {
         return transitions.size() / transitionStride;
     }
@@ -156,7 +156,7 @@ public class ParametricDFA {
         return transitions.get(transitionStride * state.getShapeId() + chi);
     }
 
-    // Costruisce un benchmark.ParametricDFA da un NFA (Automaton di Levenshtein non deterministico)
+    // Costruisce un ParametricDFA da un NFA (Automaton di Levenshtein non deterministico)
     public static ParametricDFA fromNFA(LevenshteinNFA nfa) {
         // Crea un indice per gli stati multipli
         Index<MultiState> index = new Index<>();
@@ -205,15 +205,15 @@ public class ParametricDFA {
             }
         }
 
-        // Crea e restituisce un nuovo benchmark.ParametricDFA con le distanze e le transizioni calcolate,
+        // Crea e restituisce un nuovo ParametricDFA con le distanze e le transizioni calcolate,
         // la massima distanza, il numero di possibili valori chi e il diametro degli stati multipli
         return new ParametricDFA(distance, transitions, maxDistance, numChi, multistateDiameter);
     }
 
-    // Override del metodo toString per fornire una rappresentazione in stringa dell'oggetto benchmark.ParametricDFA
+    // Override del metodo toString per fornire una rappresentazione in stringa dell'oggetto ParametricDFA
     @Override
     public String toString() {
-        return "benchmark.ParametricDFA{" +
+        return " ParametricDFA{" +
                 "distance=" + distance +
                 ", transitions=" + transitions +
                 ", maxDistance=" + maxDistance +
@@ -222,9 +222,9 @@ public class ParametricDFA {
                 '}';
     }
 
-    // Metodo main per testare la classe benchmark.ParametricDFA
+    // Metodo main per testare la classe ParametricDFA
     public static void main(String [] args){
-        // Crea un benchmark.ParametricDFA da un NFA con distanza massima 7 e transposizione abilitata
+        // Crea un ParametricDFA da un NFA con distanza massima 7 e transposizione abilitata
         ParametricDFA parametricDFA = ParametricDFA.fromNFA((new LevenshteinNFA(7, true)));
 
         // Crea uno stato parametrico iniziale
