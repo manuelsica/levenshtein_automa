@@ -3,7 +3,6 @@ package benchmark;
 import java.util.ArrayList;
 import java.util.List;
 
-// La classe rappresenta un insieme di stati di un automa a stati finiti non deterministico (NFA).
 public class MultiState {
     private List<NFAState> states;  // Lista degli stati nell'insieme.
 
@@ -57,7 +56,7 @@ public class MultiState {
 
     @Override
     public String toString() {
-        return " MultiState{" +
+        return "MultiState{" +
                 "states=" + states +
                 '}';
     }

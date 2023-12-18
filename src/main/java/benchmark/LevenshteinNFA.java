@@ -6,10 +6,14 @@ public class LevenshteinNFA {
     private final int maxDistance;   // Massima distanza di Levenshtein consentita
     private final boolean damerau;   // Indica se il calcolo della distanza deve includere le trasposizioni di caratteri
 
-    // Costruttore che inizializza l'NFA di Levenshtein con la massima distanza e l'opzione Damerau
-    public LevenshteinNFA(int maxDistance, boolean damerau) {
+    private final boolean touzet;    // Indica se la condizione locale di Touzet è attiva
+    private final boolean similHamming; // Indica se sono permesse solo sostituzioni
+    // Costruttore che inizializza l'NFA di Levenshtein con la massima distanza, l'opzione Damerau e l'opzione Touzet
+    public LevenshteinNFA(int maxDistance, boolean damerau, boolean touzet, boolean similHamming) {
         this.maxDistance = maxDistance;
         this.damerau = damerau;
+        this.touzet = touzet;
+        this.similHamming = similHamming;
     }
 
     // Calcola la distanza minima tra uno stato multistato e una lunghezza di query specificati
@@ -44,6 +48,22 @@ public class LevenshteinNFA {
         MultiState currentState = initialStates();
         MultiState nextState = MultiState.empty();
 
+            if (similHamming) {
+                if (query.length() != other.length()) {
+                    // Se le lunghezze delle stringhe sono diverse, la distanza di Hamming non è definita
+                    return Distance.atLeast(maxDistance + 1);
+                } else {
+                    // Calcola la distanza di Hamming
+                    int hammingDistance = 0;
+                    for (int i = 0; i < queryChars.length; i++) {
+                        if (queryChars[i] != other.charAt(i)) {
+                            hammingDistance++;
+                        }
+                    }
+                    return Distance.exact(hammingDistance);
+                }
+            }
+
         for (char chr : other.toCharArray()) {
             nextState.clear();
             long chi = CharacteristicVector.computeCharacteristicVector(queryChars, chr);
@@ -58,70 +78,49 @@ public class LevenshteinNFA {
 
     // Definisce un metodo per eseguire una transizione semplice in un automa a stati finiti non deterministico (NFA)
     // per uno stato e un simbolo specificati.
+    /*
+    Facciamo l'usuale ipotesi che una cancellazione non sia seguita da un inserimento.
+    Per ridurre il non determinismo, aggiungiamo un'altra condizione locale:
+    una cancellazione non è seguita da una sostituzione. Infatti,
+    è sempre possibile invertire le due operazioni e applicare la sostituzione prima della cancellazione.
+    */
+    // Modifica del metodo simpleTransition per rispettare la condizione di Touzet
     private void simpleTransition(NFAState state, long symbol, MultiState multistate) {
-        // Controlla se la distanza dello stato corrente è minore della distanza massima consentita.
         if (state.getDistance() < maxDistance) {
+            // Cancellazione (solo se non siamo in modalità Hamming)
+            if (!similHamming && extractBit(symbol, 0)) {
+                multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance(), false));
+            } else {
+                // Se non c'è stata una cancellazione o se Touzet è disattivato, procediamo con le altre operazioni
 
-            // Aggiunge uno stato al MultiState con la stessa posizione dell'offset dello stato corrente
-            // ma con la distanza incrementata di 1 e non in transposizione.
-            /*
-            L'inserimento è rappresentato da uno stato che ha lo stesso offset dello stato corrente ma con una distanza incrementata.
-            Questo rappresenta l'aggiunta di un nuovo carattere nella stringa di input.
-             */
-            multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, false)); //Inserimento
+                // Inserimento
+                if (!similHamming) {
+                    multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, false));
+                }
 
-            // Aggiunge uno stato al MultiState con l'offset incrementato di 1 e la distanza incrementata di 1,
-            // e non in transposizione.
-             /*
-            La sostituzione è implicita quando si crea un nuovo stato con l'offset incrementato e la distanza incrementata.
-            Questo rappresenta la sostituzione di un carattere nella stringa di input con un altro carattere.
-             */
-            multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance() + 1, false));//Sostituzione
+                // Sostituzione
+                if (!touzet || !extractBit(symbol, 0)) { // Aggiunta della condizione Touzet
+                    multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance() + 1, false));
+                }
 
-            // Itera per ogni possibile distanza a partire da 1 fino alla distanza massima meno la distanza corrente.
-            /*
-            Questo ciclo permette di gestire le sostituzioni multiple che possono avvenire quando si considerano errori di battitura più complessi o
-            stringhe con più errori.
-             */
-            for (int d = 1; d <= maxDistance - state.getDistance(); d++) {
+                // Sostituzione multipla (solo se non siamo in modalità Hamming)
+                if (!similHamming) {
+                    for (int d = 1; d <= maxDistance - state.getDistance(); d++) {
+                        if (extractBit(symbol, d)) {
+                            multistate.addState(new NFAState(state.getOffset() + 1 + d, state.getDistance() + d, false));
+                        }
+                    }
+                }
 
-                // Controlla se il bit nella posizione 'd' del simbolo è 1 (true).
-                if (extractBit(symbol, d)) {
-
-                    // Se il bit è 1, aggiunge uno stato al MultiState con l'offset incrementato di 1 + d
-                    // e la distanza incrementata di d, e non in transposizione.
-
-                    multistate.addState(new NFAState(state.getOffset() + 1 + d, state.getDistance() + d, false));//Sostituzione multipla
+                // Trasposizione (solo se Damerau è abilitato e non siamo in modalità Hamming)
+                if (damerau && !similHamming && extractBit(symbol, 1)) {
+                    multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, true));
                 }
             }
-
-            // Se l'opzione Damerau è abilitata e il bit nella posizione 1 del simbolo è 1,
-            // aggiunge uno stato al MultiState con la stessa posizione dell'offset dello stato corrente
-            // ma con la distanza incrementata di 1 e in transposizione.
-            /*
-            La transposizione, se abilitata (indicata dalla variabile damerau), è rappresentata da uno stato che ha lo stesso offset e una distanza incrementata,
-            ma con il flag di transposizione impostato su true. Questo rappresenta lo scambio di due caratteri adiacenti nella stringa di input.
-            */
-            if (damerau && extractBit(symbol, 1)) {
-                multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, true));//Trasposizione
-            }
         }
 
-        // Controlla se il bit nella posizione 0 del simbolo è 1.
-        /*
-                    La cancellazione è rappresentata da uno stato che ha l'offset incrementato ma la stessa distanza dello stato corrente.
-                    Questo rappresenta la rimozione di un carattere dalla stringa di input.
-        */
-        if (extractBit(symbol, 0)) {
-            // Se il bit è 1, aggiunge uno stato al MultiState con l'offset incrementato di 1
-            // e la stessa distanza dello stato corrente, e non in transposizione.
-            multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance(), false));//Cancellazione
-        }
-
-        // Se lo stato corrente è in transposizione e il bit nella posizione 0 del simbolo è 1,
-        // aggiunge uno stato al MultiState con l'offset incrementato di 2, la stessa distanza dello stato corrente,
-        // e non in transposizione.
-        if (state.isInTranspose() && extractBit(symbol, 0)) {
+        // Gestione della transposizione in caso di cancellazione precedente (solo se Damerau è abilitato e non siamo in modalità Hamming)
+        if (damerau && !similHamming && state.isInTranspose() && extractBit(symbol, 0)) {
             multistate.addState(new NFAState(state.getOffset() + 2, state.getDistance(), false));
         }
     }
@@ -156,9 +155,37 @@ public class LevenshteinNFA {
 
     // Metodo main di esempio
     public static void main(String[] args) {
-        // Esempi di utilizzo
-        LevenshteinNFA levenshteinNFA = new LevenshteinNFA(4, false);
-        Distance distance = levenshteinNFA.computeDistance("chold", "chold");
+
+       /* // Esempio in cui coincide
+
+        LevenshteinNFA levenshteinNFA = new LevenshteinNFA(10, false, true, false);
+        Distance distance = levenshteinNFA.computeDistance("casa", "cena");
         System.out.println(distance);
+
+
+        LevenshteinNFA hammingNFA = new LevenshteinNFA(10, false, false, true);
+        Distance hammingDistance = hammingNFA.computeDistance("casa", "cena");
+        System.out.println(hammingDistance);
+
+        LevenshteinNFA levenshteinNFA = new LevenshteinNFA(10, false, true, false);
+        Distance distance = levenshteinNFA.computeDistance("dire", "fare");
+        System.out.println(distance);
+
+
+        LevenshteinNFA hammingNFA = new LevenshteinNFA(5, false, false, true);
+        Distance hammingDistance = hammingNFA.computeDistance("dire", "fare");
+        System.out.println(hammingDistance);
+
+        */
+
+        LevenshteinNFA levenshteinNFA = new LevenshteinNFA(10, false, true, false);
+        Distance distance = levenshteinNFA.computeDistance("albero", "labbra");
+        System.out.println(distance);
+
+        // Esempio con distanza di Hamming
+        LevenshteinNFA hammingNFA = new LevenshteinNFA(10, false, false, true);
+        Distance hammingDistance = hammingNFA.computeDistance("dire", "fare");
+        System.out.println(hammingDistance);
+
     }
 }

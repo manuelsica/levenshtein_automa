@@ -225,7 +225,7 @@ public class ParametricDFA {
     // Metodo main per testare la classe ParametricDFA
     public static void main(String [] args){
         // Crea un ParametricDFA da un NFA con distanza massima 7 e transposizione abilitata
-        ParametricDFA parametricDFA = ParametricDFA.fromNFA((new LevenshteinNFA(7, true)));
+        ParametricDFA parametricDFA = ParametricDFA.fromNFA((new LevenshteinNFA(7, false, true, false)));
 
         // Crea uno stato parametrico iniziale
         ParametricState state = new ParametricState(1, 0);
