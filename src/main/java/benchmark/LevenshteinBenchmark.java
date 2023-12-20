@@ -125,6 +125,7 @@ public class LevenshteinBenchmark {
         Options opt = new OptionsBuilder()
                 .include(LevenshteinBenchmark.class.getSimpleName())
                 .addProfiler(GCProfiler.class)
+                .output("benchmark_results.txt")
                 .forks(1)
                 .build();
 
