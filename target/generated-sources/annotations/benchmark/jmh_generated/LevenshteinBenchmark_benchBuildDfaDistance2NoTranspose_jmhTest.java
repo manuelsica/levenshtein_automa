@@ -71,6 +71,25 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance2NoTranspose_jmhTes
             LevenshteinBenchmark_jmhType l_levenshteinbenchmark0_G = _jmh_tryInit_f_levenshteinbenchmark0_G(control);
 
             control.preSetup();
+            if (LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
+                try {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (!l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.setup();
+                        l_levenshteinbenchmark0_G.readyIteration = true;
+                    }
+                } catch (Throwable t) {
+                    control.isFailing = true;
+                    throw t;
+                } finally {
+                    LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.set(l_levenshteinbenchmark0_G, 0);
+                }
+            } else {
+                while (LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.get(l_levenshteinbenchmark0_G) == 1) {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (Thread.interrupted()) throw new InterruptedException();
+                }
+            }
 
 
             control.announceWarmupReady();
@@ -92,12 +111,31 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance2NoTranspose_jmhTes
                 if (!(e instanceof InterruptedException)) throw e;
             }
             control.preTearDown();
+            if (LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
+                try {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.readyIteration = false;
+                    }
+                } catch (Throwable t) {
+                    control.isFailing = true;
+                    throw t;
+                } finally {
+                    LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.set(l_levenshteinbenchmark0_G, 0);
+                }
+            } else {
+                while (LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.get(l_levenshteinbenchmark0_G) == 1) {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (Thread.interrupted()) throw new InterruptedException();
+                }
+            }
 
             if (control.isLastIteration()) {
                 if (LevenshteinBenchmark_jmhType.tearTrialMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
                     try {
                         if (control.isFailing) throw new FailureAssistException();
                         if (l_levenshteinbenchmark0_G.readyTrial) {
+                            l_levenshteinbenchmark0_G.tearDown();
                             l_levenshteinbenchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
@@ -161,6 +199,25 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance2NoTranspose_jmhTes
             LevenshteinBenchmark_jmhType l_levenshteinbenchmark0_G = _jmh_tryInit_f_levenshteinbenchmark0_G(control);
 
             control.preSetup();
+            if (LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
+                try {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (!l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.setup();
+                        l_levenshteinbenchmark0_G.readyIteration = true;
+                    }
+                } catch (Throwable t) {
+                    control.isFailing = true;
+                    throw t;
+                } finally {
+                    LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.set(l_levenshteinbenchmark0_G, 0);
+                }
+            } else {
+                while (LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.get(l_levenshteinbenchmark0_G) == 1) {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (Thread.interrupted()) throw new InterruptedException();
+                }
+            }
 
 
             control.announceWarmupReady();
@@ -182,12 +239,31 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance2NoTranspose_jmhTes
                 if (!(e instanceof InterruptedException)) throw e;
             }
             control.preTearDown();
+            if (LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
+                try {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.readyIteration = false;
+                    }
+                } catch (Throwable t) {
+                    control.isFailing = true;
+                    throw t;
+                } finally {
+                    LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.set(l_levenshteinbenchmark0_G, 0);
+                }
+            } else {
+                while (LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.get(l_levenshteinbenchmark0_G) == 1) {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (Thread.interrupted()) throw new InterruptedException();
+                }
+            }
 
             if (control.isLastIteration()) {
                 if (LevenshteinBenchmark_jmhType.tearTrialMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
                     try {
                         if (control.isFailing) throw new FailureAssistException();
                         if (l_levenshteinbenchmark0_G.readyTrial) {
+                            l_levenshteinbenchmark0_G.tearDown();
                             l_levenshteinbenchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
@@ -251,6 +327,25 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance2NoTranspose_jmhTes
             LevenshteinBenchmark_jmhType l_levenshteinbenchmark0_G = _jmh_tryInit_f_levenshteinbenchmark0_G(control);
 
             control.preSetup();
+            if (LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
+                try {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (!l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.setup();
+                        l_levenshteinbenchmark0_G.readyIteration = true;
+                    }
+                } catch (Throwable t) {
+                    control.isFailing = true;
+                    throw t;
+                } finally {
+                    LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.set(l_levenshteinbenchmark0_G, 0);
+                }
+            } else {
+                while (LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.get(l_levenshteinbenchmark0_G) == 1) {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (Thread.interrupted()) throw new InterruptedException();
+                }
+            }
 
 
             control.announceWarmupReady();
@@ -276,12 +371,31 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance2NoTranspose_jmhTes
                 if (!(e instanceof InterruptedException)) throw e;
             }
             control.preTearDown();
+            if (LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
+                try {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.readyIteration = false;
+                    }
+                } catch (Throwable t) {
+                    control.isFailing = true;
+                    throw t;
+                } finally {
+                    LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.set(l_levenshteinbenchmark0_G, 0);
+                }
+            } else {
+                while (LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.get(l_levenshteinbenchmark0_G) == 1) {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (Thread.interrupted()) throw new InterruptedException();
+                }
+            }
 
             if (control.isLastIteration()) {
                 if (LevenshteinBenchmark_jmhType.tearTrialMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
                     try {
                         if (control.isFailing) throw new FailureAssistException();
                         if (l_levenshteinbenchmark0_G.readyTrial) {
+                            l_levenshteinbenchmark0_G.tearDown();
                             l_levenshteinbenchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
@@ -360,6 +474,25 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance2NoTranspose_jmhTes
             LevenshteinBenchmark_jmhType l_levenshteinbenchmark0_G = _jmh_tryInit_f_levenshteinbenchmark0_G(control);
 
             control.preSetup();
+            if (LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
+                try {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (!l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.setup();
+                        l_levenshteinbenchmark0_G.readyIteration = true;
+                    }
+                } catch (Throwable t) {
+                    control.isFailing = true;
+                    throw t;
+                } finally {
+                    LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.set(l_levenshteinbenchmark0_G, 0);
+                }
+            } else {
+                while (LevenshteinBenchmark_jmhType.setupIterationMutexUpdater.get(l_levenshteinbenchmark0_G) == 1) {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (Thread.interrupted()) throw new InterruptedException();
+                }
+            }
 
 
             notifyControl.startMeasurement = true;
@@ -367,12 +500,31 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance2NoTranspose_jmhTes
             int batchSize = iterationParams.getBatchSize();
             benchBuildDfaDistance2NoTranspose_ss_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, batchSize, l_levenshteinbenchmark0_G);
             control.preTearDown();
+            if (LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
+                try {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.readyIteration = false;
+                    }
+                } catch (Throwable t) {
+                    control.isFailing = true;
+                    throw t;
+                } finally {
+                    LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.set(l_levenshteinbenchmark0_G, 0);
+                }
+            } else {
+                while (LevenshteinBenchmark_jmhType.tearIterationMutexUpdater.get(l_levenshteinbenchmark0_G) == 1) {
+                    if (control.isFailing) throw new FailureAssistException();
+                    if (Thread.interrupted()) throw new InterruptedException();
+                }
+            }
 
             if (control.isLastIteration()) {
                 if (LevenshteinBenchmark_jmhType.tearTrialMutexUpdater.compareAndSet(l_levenshteinbenchmark0_G, 0, 1)) {
                     try {
                         if (control.isFailing) throw new FailureAssistException();
                         if (l_levenshteinbenchmark0_G.readyTrial) {
+                            l_levenshteinbenchmark0_G.tearDown();
                             l_levenshteinbenchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
@@ -431,7 +583,6 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance2NoTranspose_jmhTes
                 return val;
             }
             val = new LevenshteinBenchmark_jmhType();
-            val.setup();
             val.readyTrial = true;
             f_levenshteinbenchmark0_G = val;
             } catch (Throwable t) {
