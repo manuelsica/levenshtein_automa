@@ -5,10 +5,9 @@ import java.util.Arrays;
 public class LevenshteinNFA {
     private final int maxDistance;   // Massima distanza di Levenshtein consentita
     private final boolean damerau;   // Indica se il calcolo della distanza deve includere le trasposizioni di caratteri
-
     private final boolean touzet;    // Indica se la condizione locale di Touzet è attiva
     private final boolean similHamming; // Indica se sono permesse solo sostituzioni
-    // Costruttore che inizializza l'NFA di Levenshtein con la massima distanza, l'opzione Damerau e l'opzione Touzet
+
     public LevenshteinNFA(int maxDistance, boolean damerau, boolean touzet, boolean similHamming) {
         this.maxDistance = maxDistance;
         this.damerau = damerau;

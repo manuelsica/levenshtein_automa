@@ -97,7 +97,7 @@ public class DFA {
         // Impostazione dello stato iniziale
         builder.setInitialState(1);
 
-        // Costruzione dell'automa benchmark.DFA
+        // Costruzione dell'automa DFA
         DFA dfa = builder.build();
 
         // Test dell'automa con diverse stringhe
