@@ -56,62 +56,62 @@ public class LevenshteinBenchmark {
 
     @Benchmark
     public void benchBuildDfaDistance1NoTranspose() {
-        DFA dfa = parametricDfaDistance1NoTranspose.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance1NoTranspose.buildDFA("bar", false);
     }
 
     @Benchmark
     public void benchBuildDfaDistance2NoTranspose() {
-        DFA dfa = parametricDfaDistance2NoTranspose.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance2NoTranspose.buildDFA("bar", false);
     }
 
     @Benchmark
     public void benchBuildDfaDistance3NoTranspose() {
-        DFA dfa = parametricDfaDistance3NoTranspose.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance3NoTranspose.buildDFA("bar", false);
     }
 
     @Benchmark
     public void benchBuildDfaDistance4NoTranspose() {
-        DFA dfa = parametricDfaDistance4NoTranspose.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance4NoTranspose.buildDFA("bar", false);
     }
 
     @Benchmark
     public void benchBuildDfaDistance1WithTouzet() {
-        DFA dfa = parametricDfaDistance1WithTouzet.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance1WithTouzet.buildDFA("bar", false);
     }
     @Benchmark
     public void benchBuildDfaDistance2WithTouzet() {
-        DFA dfa = parametricDfaDistance2WithTouzet.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance2WithTouzet.buildDFA("bar", false);
     }
     @Benchmark
     public void benchBuildDfaDistance3WithTouzet() {
-        DFA dfa = parametricDfaDistance3WithTouzet.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance3WithTouzet.buildDFA("bar", false);
     }
     @Benchmark
     public void benchBuildDfaDistance4WithTouzet() {
-        DFA dfa = parametricDfaDistance4WithTouzet.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance4WithTouzet.buildDFA("bar", false);
     }
     @Benchmark
     public void benchBuildDfaDistance1WithHamming() {
-        DFA dfa = parametricDfaDistance1WithHamming.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance1WithHamming.buildDFA("bar", false);
     }
     @Benchmark
     public void benchBuildDfaDistance1WithTranspose() {
-        DFA dfa = parametricDfaDistance1WithTranspose.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance1WithTranspose.buildDFA("bar", false);
     }
 
     @Benchmark
     public void benchBuildDfaDistance2WithTranspose() {
-        DFA dfa = parametricDfaDistance2WithTranspose.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance2WithTranspose.buildDFA("bar", false);
     }
 
     @Benchmark
     public void benchBuildDfaDistance3WithTranspose() {
-        DFA dfa = parametricDfaDistance3WithTranspose.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance3WithTranspose.buildDFA("bar", false);
     }
 
     @Benchmark
     public void benchBuildDfaDistance4WithTranspose() {
-        DFA dfa = parametricDfaDistance4WithTranspose.buildDFA("Levenshtein", false);
+        DFA dfa = parametricDfaDistance4WithTranspose.buildDFA("bar", false);
     }
 
     @TearDown(Level.Trial)
@@ -125,7 +125,7 @@ public class LevenshteinBenchmark {
         Options opt = new OptionsBuilder()
                 .include(LevenshteinBenchmark.class.getSimpleName())
                 .addProfiler(GCProfiler.class)
-                .output("benchmark_results.txt")
+                .output("benchmark_results_bar_3.txt")
                 .forks(1)
                 .build();
 

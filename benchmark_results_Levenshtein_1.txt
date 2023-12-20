@@ -1,0 +1,1647 @@
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose
+
+# Run progress: 0,00% complete, ETA 00:21:40
+# Fork: 1 of 1
+# Warmup Iteration   1: 41634,243 ops/s
+# Warmup Iteration   2: 42822,320 ops/s
+# Warmup Iteration   3: 43108,764 ops/s
+# Warmup Iteration   4: 42866,441 ops/s
+# Warmup Iteration   5: 43121,854 ops/s
+Iteration   1: 42936,740 ops/s
+                 ·gc.alloc.rate:                   6256,685 MB/sec
+                 ·gc.alloc.rate.norm:              160808,228 B/op
+                 ·gc.churn.G1_Eden_Space:          6232,430 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160184,847 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,519 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 13,345 B/op
+                 ·gc.count:                        152,000 counts
+                 ·gc.time:                         139,000 ms
+
+Iteration   2: 43103,822 ops/s
+                 ·gc.alloc.rate:                   6284,820 MB/sec
+                 ·gc.alloc.rate.norm:              160808,280 B/op
+                 ·gc.churn.G1_Eden_Space:          6321,402 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161744,287 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,534 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 13,653 B/op
+                 ·gc.count:                        154,000 counts
+                 ·gc.time:                         141,000 ms
+
+Iteration   3: 43005,006 ops/s
+                 ·gc.alloc.rate:                   6266,677 MB/sec
+                 ·gc.alloc.rate.norm:              160808,249 B/op
+                 ·gc.churn.G1_Eden_Space:          6273,542 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160984,394 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,510 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 13,080 B/op
+                 ·gc.count:                        153,000 counts
+                 ·gc.time:                         138,000 ms
+
+Iteration   4: 43130,262 ops/s
+                 ·gc.alloc.rate:                   6289,611 MB/sec
+                 ·gc.alloc.rate.norm:              160808,086 B/op
+                 ·gc.churn.G1_Eden_Space:          6281,842 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160609,468 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,526 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 13,455 B/op
+                 ·gc.count:                        153,000 counts
+                 ·gc.time:                         140,000 ms
+
+Iteration   5: 42893,624 ops/s
+                 ·gc.alloc.rate:                   6251,716 MB/sec
+                 ·gc.alloc.rate.norm:              160808,495 B/op
+                 ·gc.churn.G1_Eden_Space:          6277,144 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161462,573 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,523 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 13,451 B/op
+                 ·gc.count:                        153,000 counts
+                 ·gc.time:                         140,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose":
+  43013,891 ±(99.9%) 395,161 ops/s [Average]
+  (min, avg, max) = (42893,624, 43013,891, 43130,262), stdev = 102,622
+  CI (99.9%): [42618,730, 43409,051] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.alloc.rate":
+  6269,902 ±(99.9%) 64,630 MB/sec [Average]
+  (min, avg, max) = (6251,716, 6269,902, 6289,611), stdev = 16,784
+  CI (99.9%): [6205,272, 6334,532] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.alloc.rate.norm":
+  160808,268 ±(99.9%) 0,568 B/op [Average]
+  (min, avg, max) = (160808,086, 160808,268, 160808,495), stdev = 0,147
+  CI (99.9%): [160807,700, 160808,835] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.churn.G1_Eden_Space":
+  6277,272 ±(99.9%) 121,662 MB/sec [Average]
+  (min, avg, max) = (6232,430, 6277,272, 6321,402), stdev = 31,595
+  CI (99.9%): [6155,610, 6398,934] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.churn.G1_Eden_Space.norm":
+  160997,114 ±(99.9%) 2424,017 B/op [Average]
+  (min, avg, max) = (160184,847, 160997,114, 161744,287), stdev = 629,510
+  CI (99.9%): [158573,097, 163421,131] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.churn.G1_Survivor_Space":
+  0,522 ±(99.9%) 0,034 MB/sec [Average]
+  (min, avg, max) = (0,510, 0,522, 0,534), stdev = 0,009
+  CI (99.9%): [0,488, 0,556] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.churn.G1_Survivor_Space.norm":
+  13,397 ±(99.9%) 0,805 B/op [Average]
+  (min, avg, max) = (13,080, 13,397, 13,653), stdev = 0,209
+  CI (99.9%): [12,592, 14,202] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.count":
+  765,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (152,000, 153,000, 154,000), stdev = 0,707
+  CI (99.9%): [765,000, 765,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.time":
+  698,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (138,000, 139,600, 141,000), stdev = 1,140
+  CI (99.9%): [698,000, 698,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming
+
+# Run progress: 7,69% complete, ETA 00:21:15
+# Fork: 1 of 1
+# Warmup Iteration   1: 42033,912 ops/s
+# Warmup Iteration   2: 42994,276 ops/s
+# Warmup Iteration   3: 42704,815 ops/s
+# Warmup Iteration   4: 43078,320 ops/s
+# Warmup Iteration   5: 42946,460 ops/s
+Iteration   1: 43120,133 ops/s
+                 ·gc.alloc.rate:                   6289,293 MB/sec
+                 ·gc.alloc.rate.norm:              160839,894 B/op
+                 ·gc.churn.G1_Eden_Space:          6283,885 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160701,582 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,448 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,460 B/op
+                 ·gc.count:                        147,000 counts
+                 ·gc.time:                         134,000 ms
+
+Iteration   2: 43013,408 ops/s
+                 ·gc.alloc.rate:                   6274,489 MB/sec
+                 ·gc.alloc.rate.norm:              160839,931 B/op
+                 ·gc.churn.G1_Eden_Space:          6283,738 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161077,006 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,448 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,494 B/op
+                 ·gc.count:                        147,000 counts
+                 ·gc.time:                         137,000 ms
+
+Iteration   3: 42693,691 ops/s
+                 ·gc.alloc.rate:                   6224,760 MB/sec
+                 ·gc.alloc.rate.norm:              160840,011 B/op
+                 ·gc.churn.G1_Eden_Space:          6243,751 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161330,718 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,436 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,267 B/op
+                 ·gc.count:                        146,000 counts
+                 ·gc.time:                         133,000 ms
+
+Iteration   4: 43070,405 ops/s
+                 ·gc.alloc.rate:                   6285,749 MB/sec
+                 ·gc.alloc.rate.norm:              160839,828 B/op
+                 ·gc.churn.G1_Eden_Space:          6290,402 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160958,891 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,453 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,597 B/op
+                 ·gc.count:                        147,000 counts
+                 ·gc.time:                         134,000 ms
+
+Iteration   5: 43089,852 ops/s
+                 ·gc.alloc.rate:                   6285,192 MB/sec
+                 ·gc.alloc.rate.norm:              160840,111 B/op
+                 ·gc.churn.G1_Eden_Space:          6288,214 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160917,442 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,460 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,769 B/op
+                 ·gc.count:                        147,000 counts
+                 ·gc.time:                         137,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming":
+  42997,498 ±(99.9%) 670,928 ops/s [Average]
+  (min, avg, max) = (42693,691, 42997,498, 43120,133), stdev = 174,238
+  CI (99.9%): [42326,569, 43668,426] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.alloc.rate":
+  6271,897 ±(99.9%) 103,679 MB/sec [Average]
+  (min, avg, max) = (6224,760, 6271,897, 6289,293), stdev = 26,925
+  CI (99.9%): [6168,218, 6375,576] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.alloc.rate.norm":
+  160839,955 ±(99.9%) 0,421 B/op [Average]
+  (min, avg, max) = (160839,828, 160839,955, 160840,111), stdev = 0,109
+  CI (99.9%): [160839,534, 160840,376] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.churn.G1_Eden_Space":
+  6277,998 ±(99.9%) 74,534 MB/sec [Average]
+  (min, avg, max) = (6243,751, 6277,998, 6290,402), stdev = 19,356
+  CI (99.9%): [6203,464, 6352,532] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.churn.G1_Eden_Space.norm":
+  160997,128 ±(99.9%) 888,202 B/op [Average]
+  (min, avg, max) = (160701,582, 160997,128, 161330,718), stdev = 230,663
+  CI (99.9%): [160108,925, 161885,330] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.churn.G1_Survivor_Space":
+  0,449 ±(99.9%) 0,034 MB/sec [Average]
+  (min, avg, max) = (0,436, 0,449, 0,460), stdev = 0,009
+  CI (99.9%): [0,415, 0,483] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.churn.G1_Survivor_Space.norm":
+  11,517 ±(99.9%) 0,711 B/op [Average]
+  (min, avg, max) = (11,267, 11,517, 11,769), stdev = 0,185
+  CI (99.9%): [10,806, 12,228] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.count":
+  734,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (146,000, 146,800, 147,000), stdev = 0,447
+  CI (99.9%): [734,000, 734,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.time":
+  675,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (133,000, 135,000, 137,000), stdev = 1,871
+  CI (99.9%): [675,000, 675,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet
+
+# Run progress: 15,38% complete, ETA 00:19:29
+# Fork: 1 of 1
+# Warmup Iteration   1: 42068,021 ops/s
+# Warmup Iteration   2: 42956,449 ops/s
+# Warmup Iteration   3: 41806,891 ops/s
+# Warmup Iteration   4: 41172,591 ops/s
+# Warmup Iteration   5: 40125,640 ops/s
+Iteration   1: 41541,482 ops/s
+                 ·gc.alloc.rate:                   6063,234 MB/sec
+                 ·gc.alloc.rate.norm:              160855,941 B/op
+                 ·gc.churn.G1_Eden_Space:          6092,852 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161641,695 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,484 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,833 B/op
+                 ·gc.count:                        137,000 counts
+                 ·gc.time:                         128,000 ms
+
+Iteration   2: 41441,097 ops/s
+                 ·gc.alloc.rate:                   6046,129 MB/sec
+                 ·gc.alloc.rate.norm:              160855,925 B/op
+                 ·gc.churn.G1_Eden_Space:          6046,566 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160867,553 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,476 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,662 B/op
+                 ·gc.count:                        136,000 counts
+                 ·gc.time:                         127,000 ms
+
+Iteration   3: 41142,619 ops/s
+                 ·gc.alloc.rate:                   6002,567 MB/sec
+                 ·gc.alloc.rate.norm:              160856,002 B/op
+                 ·gc.churn.G1_Eden_Space:          6008,578 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161017,088 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,473 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,687 B/op
+                 ·gc.count:                        135,000 counts
+                 ·gc.time:                         127,000 ms
+
+Iteration   4: 41148,856 ops/s
+                 ·gc.alloc.rate:                   6005,143 MB/sec
+                 ·gc.alloc.rate.norm:              160855,972 B/op
+                 ·gc.churn.G1_Eden_Space:          6004,940 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160850,546 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,467 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,500 B/op
+                 ·gc.count:                        135,000 counts
+                 ·gc.time:                         126,000 ms
+
+Iteration   5: 41386,382 ops/s
+                 ·gc.alloc.rate:                   6039,060 MB/sec
+                 ·gc.alloc.rate.norm:              160856,176 B/op
+                 ·gc.churn.G1_Eden_Space:          6050,468 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161160,060 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,484 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,889 B/op
+                 ·gc.count:                        136,000 counts
+                 ·gc.time:                         128,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet":
+  41332,087 ±(99.9%) 689,226 ops/s [Average]
+  (min, avg, max) = (41142,619, 41332,087, 41541,482), stdev = 178,990
+  CI (99.9%): [40642,861, 42021,313] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.alloc.rate":
+  6031,226 ±(99.9%) 102,054 MB/sec [Average]
+  (min, avg, max) = (6002,567, 6031,226, 6063,234), stdev = 26,503
+  CI (99.9%): [5929,173, 6133,280] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.alloc.rate.norm":
+  160856,003 ±(99.9%) 0,389 B/op [Average]
+  (min, avg, max) = (160855,925, 160856,003, 160856,176), stdev = 0,101
+  CI (99.9%): [160855,614, 160856,392] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.churn.G1_Eden_Space":
+  6040,681 ±(99.9%) 138,305 MB/sec [Average]
+  (min, avg, max) = (6004,940, 6040,681, 6092,852), stdev = 35,917
+  CI (99.9%): [5902,376, 6178,986] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.churn.G1_Eden_Space.norm":
+  161107,388 ±(99.9%) 1247,605 B/op [Average]
+  (min, avg, max) = (160850,546, 161107,388, 161641,695), stdev = 323,999
+  CI (99.9%): [159859,784, 162354,993] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.churn.G1_Survivor_Space":
+  0,477 ±(99.9%) 0,028 MB/sec [Average]
+  (min, avg, max) = (0,467, 0,477, 0,484), stdev = 0,007
+  CI (99.9%): [0,449, 0,505] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.churn.G1_Survivor_Space.norm":
+  12,714 ±(99.9%) 0,591 B/op [Average]
+  (min, avg, max) = (12,500, 12,714, 12,889), stdev = 0,153
+  CI (99.9%): [12,124, 13,305] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.count":
+  679,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (135,000, 135,800, 137,000), stdev = 0,837
+  CI (99.9%): [679,000, 679,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.time":
+  636,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (126,000, 127,200, 128,000), stdev = 0,837
+  CI (99.9%): [636,000, 636,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose
+
+# Run progress: 23,08% complete, ETA 00:17:42
+# Fork: 1 of 1
+# Warmup Iteration   1: 40454,917 ops/s
+# Warmup Iteration   2: 41595,465 ops/s
+# Warmup Iteration   3: 41661,735 ops/s
+# Warmup Iteration   4: 41306,260 ops/s
+# Warmup Iteration   5: 41248,514 ops/s
+Iteration   1: 41473,813 ops/s
+                 ·gc.alloc.rate:                   6055,475 MB/sec
+                 ·gc.alloc.rate.norm:              160856,071 B/op
+                 ·gc.churn.G1_Eden_Space:          6076,147 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161405,212 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,432 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,471 B/op
+                 ·gc.count:                        139,000 counts
+                 ·gc.time:                         131,000 ms
+
+Iteration   2: 41093,175 ops/s
+                 ·gc.alloc.rate:                   5997,556 MB/sec
+                 ·gc.alloc.rate.norm:              160856,110 B/op
+                 ·gc.churn.G1_Eden_Space:          5987,220 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160578,879 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,432 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,586 B/op
+                 ·gc.count:                        137,000 counts
+                 ·gc.time:                         129,000 ms
+
+Iteration   3: 41075,023 ops/s
+                 ·gc.alloc.rate:                   5995,111 MB/sec
+                 ·gc.alloc.rate.norm:              160856,176 B/op
+                 ·gc.churn.G1_Eden_Space:          6031,802 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161840,654 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,435 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,665 B/op
+                 ·gc.count:                        138,000 counts
+                 ·gc.time:                         129,000 ms
+
+Iteration   4: 41047,887 ops/s
+                 ·gc.alloc.rate:                   5989,408 MB/sec
+                 ·gc.alloc.rate.norm:              160856,113 B/op
+                 ·gc.churn.G1_Eden_Space:          5989,274 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160852,491 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,440 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,829 B/op
+                 ·gc.count:                        137,000 counts
+                 ·gc.time:                         130,000 ms
+
+Iteration   5: 41439,480 ops/s
+                 ·gc.alloc.rate:                   6049,195 MB/sec
+                 ·gc.alloc.rate.norm:              160856,262 B/op
+                 ·gc.churn.G1_Eden_Space:          6036,969 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160531,163 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,449 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,950 B/op
+                 ·gc.count:                        138,000 counts
+                 ·gc.time:                         131,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose":
+  41225,876 ±(99.9%) 814,904 ops/s [Average]
+  (min, avg, max) = (41047,887, 41225,876, 41473,813), stdev = 211,628
+  CI (99.9%): [40410,972, 42040,779] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.alloc.rate":
+  6017,349 ±(99.9%) 123,801 MB/sec [Average]
+  (min, avg, max) = (5989,408, 6017,349, 6055,475), stdev = 32,151
+  CI (99.9%): [5893,548, 6141,150] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.alloc.rate.norm":
+  160856,146 ±(99.9%) 0,287 B/op [Average]
+  (min, avg, max) = (160856,071, 160856,146, 160856,262), stdev = 0,075
+  CI (99.9%): [160855,859, 160856,434] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.churn.G1_Eden_Space":
+  6024,282 ±(99.9%) 142,873 MB/sec [Average]
+  (min, avg, max) = (5987,220, 6024,282, 6076,147), stdev = 37,104
+  CI (99.9%): [5881,410, 6167,155] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.churn.G1_Eden_Space.norm":
+  161041,680 ±(99.9%) 2179,206 B/op [Average]
+  (min, avg, max) = (160531,163, 161041,680, 161840,654), stdev = 565,933
+  CI (99.9%): [158862,473, 163220,886] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.churn.G1_Survivor_Space":
+  0,438 ±(99.9%) 0,029 MB/sec [Average]
+  (min, avg, max) = (0,432, 0,438, 0,449), stdev = 0,007
+  CI (99.9%): [0,409, 0,466] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.churn.G1_Survivor_Space.norm":
+  11,700 ±(99.9%) 0,735 B/op [Average]
+  (min, avg, max) = (11,471, 11,700, 11,950), stdev = 0,191
+  CI (99.9%): [10,965, 12,435] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.count":
+  689,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (137,000, 137,800, 139,000), stdev = 0,837
+  CI (99.9%): [689,000, 689,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.time":
+  650,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (129,000, 130,000, 131,000), stdev = 1,000
+  CI (99.9%): [650,000, 650,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose
+
+# Run progress: 30,77% complete, ETA 00:15:56
+# Fork: 1 of 1
+# Warmup Iteration   1: 40102,534 ops/s
+# Warmup Iteration   2: 41408,161 ops/s
+# Warmup Iteration   3: 41643,468 ops/s
+# Warmup Iteration   4: 41500,039 ops/s
+# Warmup Iteration   5: 41310,008 ops/s
+Iteration   1: 41262,780 ops/s
+                 ·gc.alloc.rate:                   6021,794 MB/sec
+                 ·gc.alloc.rate.norm:              160840,157 B/op
+                 ·gc.churn.G1_Eden_Space:          5995,899 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160148,497 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,446 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,924 B/op
+                 ·gc.count:                        139,000 counts
+                 ·gc.time:                         131,000 ms
+
+Iteration   2: 41632,877 ops/s
+                 ·gc.alloc.rate:                   6074,884 MB/sec
+                 ·gc.alloc.rate.norm:              160840,126 B/op
+                 ·gc.churn.G1_Eden_Space:          6081,950 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161027,200 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,452 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,962 B/op
+                 ·gc.count:                        141,000 counts
+                 ·gc.time:                         132,000 ms
+
+Iteration   3: 41436,858 ops/s
+                 ·gc.alloc.rate:                   6047,876 MB/sec
+                 ·gc.alloc.rate.norm:              160840,209 B/op
+                 ·gc.churn.G1_Eden_Space:          6086,020 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161854,633 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,464 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,335 B/op
+                 ·gc.count:                        141,000 counts
+                 ·gc.time:                         133,000 ms
+
+Iteration   4: 41436,413 ops/s
+                 ·gc.alloc.rate:                   6047,340 MB/sec
+                 ·gc.alloc.rate.norm:              160840,123 B/op
+                 ·gc.churn.G1_Eden_Space:          6046,057 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160805,992 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,459 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,198 B/op
+                 ·gc.count:                        140,000 counts
+                 ·gc.time:                         131,000 ms
+
+Iteration   5: 41474,175 ops/s
+                 ·gc.alloc.rate:                   6053,890 MB/sec
+                 ·gc.alloc.rate.norm:              160840,405 B/op
+                 ·gc.churn.G1_Eden_Space:          6086,532 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161707,631 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,474 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,587 B/op
+                 ·gc.count:                        141,000 counts
+                 ·gc.time:                         131,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose":
+  41448,621 ±(99.9%) 507,306 ops/s [Average]
+  (min, avg, max) = (41262,780, 41448,621, 41632,877), stdev = 131,746
+  CI (99.9%): [40941,314, 41955,927] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.alloc.rate":
+  6049,157 ±(99.9%) 73,008 MB/sec [Average]
+  (min, avg, max) = (6021,794, 6049,157, 6074,884), stdev = 18,960
+  CI (99.9%): [5976,148, 6122,165] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.alloc.rate.norm":
+  160840,204 ±(99.9%) 0,453 B/op [Average]
+  (min, avg, max) = (160840,123, 160840,204, 160840,405), stdev = 0,118
+  CI (99.9%): [160839,751, 160840,657] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.churn.G1_Eden_Space":
+  6059,291 ±(99.9%) 151,155 MB/sec [Average]
+  (min, avg, max) = (5995,899, 6059,291, 6086,532), stdev = 39,254
+  CI (99.9%): [5908,136, 6210,446] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.churn.G1_Eden_Space.norm":
+  161108,790 ±(99.9%) 2678,482 B/op [Average]
+  (min, avg, max) = (160148,497, 161108,790, 161854,633), stdev = 695,593
+  CI (99.9%): [158430,309, 163787,272] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.churn.G1_Survivor_Space":
+  0,459 ±(99.9%) 0,041 MB/sec [Average]
+  (min, avg, max) = (0,446, 0,459, 0,474), stdev = 0,011
+  CI (99.9%): [0,418, 0,500] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.churn.G1_Survivor_Space.norm":
+  12,201 ±(99.9%) 1,056 B/op [Average]
+  (min, avg, max) = (11,924, 12,201, 12,587), stdev = 0,274
+  CI (99.9%): [11,145, 13,257] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.count":
+  702,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (139,000, 140,400, 141,000), stdev = 0,894
+  CI (99.9%): [702,000, 702,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.time":
+  658,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (131,000, 131,600, 133,000), stdev = 0,894
+  CI (99.9%): [658,000, 658,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet
+
+# Run progress: 38,46% complete, ETA 00:14:09
+# Fork: 1 of 1
+# Warmup Iteration   1: 40664,334 ops/s
+# Warmup Iteration   2: 41338,948 ops/s
+# Warmup Iteration   3: 41555,105 ops/s
+# Warmup Iteration   4: 41261,342 ops/s
+# Warmup Iteration   5: 41062,605 ops/s
+Iteration   1: 41311,632 ops/s
+                 ·gc.alloc.rate:                   6026,407 MB/sec
+                 ·gc.alloc.rate.norm:              160841,200 B/op
+                 ·gc.churn.G1_Eden_Space:          6002,084 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160192,035 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,381 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 10,181 B/op
+                 ·gc.count:                        158,000 counts
+                 ·gc.time:                         147,000 ms
+
+Iteration   2: 41131,943 ops/s
+                 ·gc.alloc.rate:                   6001,433 MB/sec
+                 ·gc.alloc.rate.norm:              160841,341 B/op
+                 ·gc.churn.G1_Eden_Space:          6044,874 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     162005,577 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,382 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 10,237 B/op
+                 ·gc.count:                        159,000 counts
+                 ·gc.time:                         146,000 ms
+
+Iteration   3: 41268,439 ops/s
+                 ·gc.alloc.rate:                   6024,287 MB/sec
+                 ·gc.alloc.rate.norm:              160841,185 B/op
+                 ·gc.churn.G1_Eden_Space:          6010,783 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160480,651 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,373 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,953 B/op
+                 ·gc.count:                        158,000 counts
+                 ·gc.time:                         147,000 ms
+
+Iteration   4: 41110,425 ops/s
+                 ·gc.alloc.rate:                   5997,991 MB/sec
+                 ·gc.alloc.rate.norm:              160841,134 B/op
+                 ·gc.churn.G1_Eden_Space:          6003,725 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160994,887 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,368 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,874 B/op
+                 ·gc.count:                        158,000 counts
+                 ·gc.time:                         147,000 ms
+
+Iteration   5: 41492,579 ops/s
+                 ·gc.alloc.rate:                   6054,065 MB/sec
+                 ·gc.alloc.rate.norm:              160841,427 B/op
+                 ·gc.churn.G1_Eden_Space:          6079,669 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161521,675 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,369 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,807 B/op
+                 ·gc.count:                        160,000 counts
+                 ·gc.time:                         149,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet":
+  41263,004 ±(99.9%) 595,158 ops/s [Average]
+  (min, avg, max) = (41110,425, 41263,004, 41492,579), stdev = 154,561
+  CI (99.9%): [40667,845, 41858,162] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.alloc.rate":
+  6020,837 ±(99.9%) 87,076 MB/sec [Average]
+  (min, avg, max) = (5997,991, 6020,837, 6054,065), stdev = 22,613
+  CI (99.9%): [5933,760, 6107,913] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.alloc.rate.norm":
+  160841,257 ±(99.9%) 0,469 B/op [Average]
+  (min, avg, max) = (160841,134, 160841,257, 160841,427), stdev = 0,122
+  CI (99.9%): [160840,788, 160841,727] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.churn.G1_Eden_Space":
+  6028,227 ±(99.9%) 129,320 MB/sec [Average]
+  (min, avg, max) = (6002,084, 6028,227, 6079,669), stdev = 33,584
+  CI (99.9%): [5898,907, 6157,547] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.churn.G1_Eden_Space.norm":
+  161038,965 ±(99.9%) 2854,607 B/op [Average]
+  (min, avg, max) = (160192,035, 161038,965, 162005,577), stdev = 741,332
+  CI (99.9%): [158184,358, 163893,572] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.churn.G1_Survivor_Space":
+  0,375 ±(99.9%) 0,025 MB/sec [Average]
+  (min, avg, max) = (0,368, 0,375, 0,382), stdev = 0,007
+  CI (99.9%): [0,349, 0,400] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.churn.G1_Survivor_Space.norm":
+  10,011 ±(99.9%) 0,730 B/op [Average]
+  (min, avg, max) = (9,807, 10,011, 10,237), stdev = 0,189
+  CI (99.9%): [9,281, 10,740] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.count":
+  793,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (158,000, 158,600, 160,000), stdev = 0,894
+  CI (99.9%): [793,000, 793,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.time":
+  736,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (146,000, 147,200, 149,000), stdev = 1,095
+  CI (99.9%): [736,000, 736,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose
+
+# Run progress: 46,15% complete, ETA 00:12:23
+# Fork: 1 of 1
+# Warmup Iteration   1: 40185,125 ops/s
+# Warmup Iteration   2: 41376,811 ops/s
+# Warmup Iteration   3: 38978,801 ops/s
+# Warmup Iteration   4: 38007,973 ops/s
+# Warmup Iteration   5: 38371,066 ops/s
+Iteration   1: 38477,460 ops/s
+                 ·gc.alloc.rate:                   5614,463 MB/sec
+                 ·gc.alloc.rate.norm:              160840,864 B/op
+                 ·gc.churn.G1_Eden_Space:          5605,347 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160579,714 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,399 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,440 B/op
+                 ·gc.count:                        131,000 counts
+                 ·gc.time:                         122,000 ms
+
+Iteration   2: 38319,729 ops/s
+                 ·gc.alloc.rate:                   5591,615 MB/sec
+                 ·gc.alloc.rate.norm:              160840,927 B/op
+                 ·gc.churn.G1_Eden_Space:          5601,919 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161137,294 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,389 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,188 B/op
+                 ·gc.count:                        131,000 counts
+                 ·gc.time:                         123,000 ms
+
+Iteration   3: 38588,723 ops/s
+                 ·gc.alloc.rate:                   5630,971 MB/sec
+                 ·gc.alloc.rate.norm:              160840,856 B/op
+                 ·gc.churn.G1_Eden_Space:          5642,025 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161156,600 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,393 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,215 B/op
+                 ·gc.count:                        132,000 counts
+                 ·gc.time:                         122,000 ms
+
+Iteration   4: 38087,801 ops/s
+                 ·gc.alloc.rate:                   5559,885 MB/sec
+                 ·gc.alloc.rate.norm:              160840,960 B/op
+                 ·gc.churn.G1_Eden_Space:          5559,580 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160832,130 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,393 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,369 B/op
+                 ·gc.count:                        130,000 counts
+                 ·gc.time:                         118,000 ms
+
+Iteration   5: 38320,723 ops/s
+                 ·gc.alloc.rate:                   5592,878 MB/sec
+                 ·gc.alloc.rate.norm:              160841,192 B/op
+                 ·gc.churn.G1_Eden_Space:          5606,492 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161232,704 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,418 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,028 B/op
+                 ·gc.count:                        131,000 counts
+                 ·gc.time:                         120,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose":
+  38358,887 ±(99.9%) 728,987 ops/s [Average]
+  (min, avg, max) = (38087,801, 38358,887, 38588,723), stdev = 189,316
+  CI (99.9%): [37629,900, 39087,875] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.alloc.rate":
+  5597,962 ±(99.9%) 103,285 MB/sec [Average]
+  (min, avg, max) = (5559,885, 5597,962, 5630,971), stdev = 26,823
+  CI (99.9%): [5494,678, 5701,247] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.alloc.rate.norm":
+  160840,960 ±(99.9%) 0,527 B/op [Average]
+  (min, avg, max) = (160840,856, 160840,960, 160841,192), stdev = 0,137
+  CI (99.9%): [160840,433, 160841,486] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.churn.G1_Eden_Space":
+  5603,072 ±(99.9%) 112,711 MB/sec [Average]
+  (min, avg, max) = (5559,580, 5603,072, 5642,025), stdev = 29,271
+  CI (99.9%): [5490,361, 5715,784] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.churn.G1_Eden_Space.norm":
+  160987,688 ±(99.9%) 1057,328 B/op [Average]
+  (min, avg, max) = (160579,714, 160987,688, 161232,704), stdev = 274,585
+  CI (99.9%): [159930,361, 162045,016] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.churn.G1_Survivor_Space":
+  0,398 ±(99.9%) 0,045 MB/sec [Average]
+  (min, avg, max) = (0,389, 0,398, 0,418), stdev = 0,012
+  CI (99.9%): [0,353, 0,443] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.churn.G1_Survivor_Space.norm":
+  11,448 ±(99.9%) 1,312 B/op [Average]
+  (min, avg, max) = (11,188, 11,448, 12,028), stdev = 0,341
+  CI (99.9%): [10,136, 12,760] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.count":
+  655,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (130,000, 131,000, 132,000), stdev = 0,707
+  CI (99.9%): [655,000, 655,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.time":
+  605,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (118,000, 121,000, 123,000), stdev = 2,000
+  CI (99.9%): [605,000, 605,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose
+
+# Run progress: 53,85% complete, ETA 00:10:37
+# Fork: 1 of 1
+# Warmup Iteration   1: 40049,067 ops/s
+# Warmup Iteration   2: 41450,512 ops/s
+# Warmup Iteration   3: 41727,271 ops/s
+# Warmup Iteration   4: 41463,381 ops/s
+# Warmup Iteration   5: 41279,244 ops/s
+Iteration   1: 41375,159 ops/s
+                 ·gc.alloc.rate:                   6041,627 MB/sec
+                 ·gc.alloc.rate.norm:              160856,278 B/op
+                 ·gc.churn.G1_Eden_Space:          6046,781 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160993,507 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,346 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,222 B/op
+                 ·gc.count:                        142,000 counts
+                 ·gc.time:                         131,000 ms
+
+Iteration   2: 41404,550 ops/s
+                 ·gc.alloc.rate:                   6042,225 MB/sec
+                 ·gc.alloc.rate.norm:              160856,279 B/op
+                 ·gc.churn.G1_Eden_Space:          6047,789 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161004,388 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,344 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,160 B/op
+                 ·gc.count:                        142,000 counts
+                 ·gc.time:                         131,000 ms
+
+Iteration   3: 41575,506 ops/s
+                 ·gc.alloc.rate:                   6067,483 MB/sec
+                 ·gc.alloc.rate.norm:              160856,271 B/op
+                 ·gc.churn.G1_Eden_Space:          6092,105 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161509,046 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,347 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,207 B/op
+                 ·gc.count:                        143,000 counts
+                 ·gc.time:                         135,000 ms
+
+Iteration   4: 41579,353 ops/s
+                 ·gc.alloc.rate:                   6067,128 MB/sec
+                 ·gc.alloc.rate.norm:              160856,197 B/op
+                 ·gc.churn.G1_Eden_Space:          6084,394 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161313,961 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,354 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,382 B/op
+                 ·gc.count:                        143,000 counts
+                 ·gc.time:                         133,000 ms
+
+Iteration   5: 41388,957 ops/s
+                 ·gc.alloc.rate:                   6040,574 MB/sec
+                 ·gc.alloc.rate.norm:              160856,482 B/op
+                 ·gc.churn.G1_Eden_Space:          6044,159 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160951,943 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,346 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,203 B/op
+                 ·gc.count:                        142,000 counts
+                 ·gc.time:                         132,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose":
+  41464,705 ±(99.9%) 398,295 ops/s [Average]
+  (min, avg, max) = (41375,159, 41464,705, 41579,353), stdev = 103,436
+  CI (99.9%): [41066,410, 41863,001] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.alloc.rate":
+  6051,807 ±(99.9%) 54,527 MB/sec [Average]
+  (min, avg, max) = (6040,574, 6051,807, 6067,483), stdev = 14,160
+  CI (99.9%): [5997,281, 6106,334] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.alloc.rate.norm":
+  160856,302 ±(99.9%) 0,411 B/op [Average]
+  (min, avg, max) = (160856,197, 160856,302, 160856,482), stdev = 0,107
+  CI (99.9%): [160855,891, 160856,712] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.churn.G1_Eden_Space":
+  6063,045 ±(99.9%) 89,361 MB/sec [Average]
+  (min, avg, max) = (6044,159, 6063,045, 6092,105), stdev = 23,207
+  CI (99.9%): [5973,685, 6152,406] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.churn.G1_Eden_Space.norm":
+  161154,569 ±(99.9%) 944,414 B/op [Average]
+  (min, avg, max) = (160951,943, 161154,569, 161509,046), stdev = 245,261
+  CI (99.9%): [160210,155, 162098,983] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.churn.G1_Survivor_Space":
+  0,347 ±(99.9%) 0,015 MB/sec [Average]
+  (min, avg, max) = (0,344, 0,347, 0,354), stdev = 0,004
+  CI (99.9%): [0,333, 0,362] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.churn.G1_Survivor_Space.norm":
+  9,235 ±(99.9%) 0,330 B/op [Average]
+  (min, avg, max) = (9,160, 9,235, 9,382), stdev = 0,086
+  CI (99.9%): [8,905, 9,565] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.count":
+  712,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (142,000, 142,400, 143,000), stdev = 0,548
+  CI (99.9%): [712,000, 712,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.time":
+  662,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (131,000, 132,400, 135,000), stdev = 1,673
+  CI (99.9%): [662,000, 662,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet
+
+# Run progress: 61,54% complete, ETA 00:08:50
+# Fork: 1 of 1
+# Warmup Iteration   1: 40410,458 ops/s
+# Warmup Iteration   2: 41470,920 ops/s
+# Warmup Iteration   3: 41805,217 ops/s
+# Warmup Iteration   4: 41612,971 ops/s
+# Warmup Iteration   5: 41346,792 ops/s
+Iteration   1: 41477,109 ops/s
+                 ·gc.alloc.rate:                   6050,579 MB/sec
+                 ·gc.alloc.rate.norm:              160840,145 B/op
+                 ·gc.churn.G1_Eden_Space:          6042,486 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160625,004 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,450 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,952 B/op
+                 ·gc.count:                        140,000 counts
+                 ·gc.time:                         131,000 ms
+
+Iteration   2: 41605,604 ops/s
+                 ·gc.alloc.rate:                   6070,449 MB/sec
+                 ·gc.alloc.rate.norm:              160840,151 B/op
+                 ·gc.churn.G1_Eden_Space:          6086,766 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161272,486 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,452 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,966 B/op
+                 ·gc.count:                        141,000 counts
+                 ·gc.time:                         131,000 ms
+
+Iteration   3: 41480,998 ops/s
+                 ·gc.alloc.rate:                   6055,607 MB/sec
+                 ·gc.alloc.rate.norm:              160840,183 B/op
+                 ·gc.churn.G1_Eden_Space:          6084,279 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161601,737 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,451 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,972 B/op
+                 ·gc.count:                        141,000 counts
+                 ·gc.time:                         135,000 ms
+
+Iteration   4: 41178,212 ops/s
+                 ·gc.alloc.rate:                   6009,181 MB/sec
+                 ·gc.alloc.rate.norm:              160840,146 B/op
+                 ·gc.churn.G1_Eden_Space:          5994,613 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160450,223 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,446 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,947 B/op
+                 ·gc.count:                        139,000 counts
+                 ·gc.time:                         130,000 ms
+
+Iteration   5: 41327,914 ops/s
+                 ·gc.alloc.rate:                   6032,994 MB/sec
+                 ·gc.alloc.rate.norm:              160840,402 B/op
+                 ·gc.churn.G1_Eden_Space:          6041,499 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161067,145 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,454 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,100 B/op
+                 ·gc.count:                        140,000 counts
+                 ·gc.time:                         132,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet":
+  41413,967 ±(99.9%) 633,282 ops/s [Average]
+  (min, avg, max) = (41178,212, 41413,967, 41605,604), stdev = 164,461
+  CI (99.9%): [40780,685, 42047,250] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.alloc.rate":
+  6043,762 ±(99.9%) 90,527 MB/sec [Average]
+  (min, avg, max) = (6009,181, 6043,762, 6070,449), stdev = 23,509
+  CI (99.9%): [5953,235, 6134,289] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.alloc.rate.norm":
+  160840,205 ±(99.9%) 0,428 B/op [Average]
+  (min, avg, max) = (160840,145, 160840,205, 160840,402), stdev = 0,111
+  CI (99.9%): [160839,778, 160840,633] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.churn.G1_Eden_Space":
+  6049,929 ±(99.9%) 145,655 MB/sec [Average]
+  (min, avg, max) = (5994,613, 6049,929, 6086,766), stdev = 37,826
+  CI (99.9%): [5904,273, 6195,584] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.churn.G1_Eden_Space.norm":
+  161003,319 ±(99.9%) 1809,870 B/op [Average]
+  (min, avg, max) = (160450,223, 161003,319, 161601,737), stdev = 470,018
+  CI (99.9%): [159193,449, 162813,190] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.churn.G1_Survivor_Space":
+  0,450 ±(99.9%) 0,011 MB/sec [Average]
+  (min, avg, max) = (0,446, 0,450, 0,454), stdev = 0,003
+  CI (99.9%): [0,440, 0,461] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.churn.G1_Survivor_Space.norm":
+  11,987 ±(99.9%) 0,246 B/op [Average]
+  (min, avg, max) = (11,947, 11,987, 12,100), stdev = 0,064
+  CI (99.9%): [11,741, 12,233] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.count":
+  701,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (139,000, 140,200, 141,000), stdev = 0,837
+  CI (99.9%): [701,000, 701,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.time":
+  659,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (130,000, 131,800, 135,000), stdev = 1,924
+  CI (99.9%): [659,000, 659,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose
+
+# Run progress: 69,23% complete, ETA 00:07:04
+# Fork: 1 of 1
+# Warmup Iteration   1: 40112,181 ops/s
+# Warmup Iteration   2: 41519,280 ops/s
+# Warmup Iteration   3: 41417,775 ops/s
+# Warmup Iteration   4: 41331,740 ops/s
+# Warmup Iteration   5: 40963,639 ops/s
+Iteration   1: 40994,907 ops/s
+                 ·gc.alloc.rate:                   5983,866 MB/sec
+                 ·gc.alloc.rate.norm:              160856,097 B/op
+                 ·gc.churn.G1_Eden_Space:          5971,550 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160525,029 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,445 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,969 B/op
+                 ·gc.count:                        136,000 counts
+                 ·gc.time:                         126,000 ms
+
+Iteration   2: 41033,245 ops/s
+                 ·gc.alloc.rate:                   5990,441 MB/sec
+                 ·gc.alloc.rate.norm:              160856,154 B/op
+                 ·gc.churn.G1_Eden_Space:          6022,419 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161714,817 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,436 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,719 B/op
+                 ·gc.count:                        137,000 counts
+                 ·gc.time:                         128,000 ms
+
+Iteration   3: 41089,843 ops/s
+                 ·gc.alloc.rate:                   5997,176 MB/sec
+                 ·gc.alloc.rate.norm:              160856,066 B/op
+                 ·gc.churn.G1_Eden_Space:          5973,119 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160210,798 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,436 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,699 B/op
+                 ·gc.count:                        136,000 counts
+                 ·gc.time:                         126,000 ms
+
+Iteration   4: 40995,304 ops/s
+                 ·gc.alloc.rate:                   5986,001 MB/sec
+                 ·gc.alloc.rate.norm:              160856,136 B/op
+                 ·gc.churn.G1_Eden_Space:          6017,384 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161699,451 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,467 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,540 B/op
+                 ·gc.count:                        137,000 counts
+                 ·gc.time:                         128,000 ms
+
+Iteration   5: 41250,028 ops/s
+                 ·gc.alloc.rate:                   6021,795 MB/sec
+                 ·gc.alloc.rate.norm:              160856,268 B/op
+                 ·gc.churn.G1_Eden_Space:          6013,684 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160639,594 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,461 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 12,320 B/op
+                 ·gc.count:                        137,000 counts
+                 ·gc.time:                         125,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose":
+  41072,666 ±(99.9%) 409,952 ops/s [Average]
+  (min, avg, max) = (40994,907, 41072,666, 41250,028), stdev = 106,463
+  CI (99.9%): [40662,713, 41482,618] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.alloc.rate":
+  5995,856 ±(99.9%) 59,180 MB/sec [Average]
+  (min, avg, max) = (5983,866, 5995,856, 6021,795), stdev = 15,369
+  CI (99.9%): [5936,676, 6055,036] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.alloc.rate.norm":
+  160856,144 ±(99.9%) 0,297 B/op [Average]
+  (min, avg, max) = (160856,066, 160856,144, 160856,268), stdev = 0,077
+  CI (99.9%): [160855,847, 160856,441] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.churn.G1_Eden_Space":
+  5999,631 ±(99.9%) 96,715 MB/sec [Average]
+  (min, avg, max) = (5971,550, 5999,631, 6022,419), stdev = 25,117
+  CI (99.9%): [5902,916, 6096,346] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.churn.G1_Eden_Space.norm":
+  160957,938 ±(99.9%) 2702,097 B/op [Average]
+  (min, avg, max) = (160210,798, 160957,938, 161714,817), stdev = 701,726
+  CI (99.9%): [158255,840, 163660,035] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.churn.G1_Survivor_Space":
+  0,449 ±(99.9%) 0,054 MB/sec [Average]
+  (min, avg, max) = (0,436, 0,449, 0,467), stdev = 0,014
+  CI (99.9%): [0,395, 0,504] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.churn.G1_Survivor_Space.norm":
+  12,049 ±(99.9%) 1,431 B/op [Average]
+  (min, avg, max) = (11,699, 12,049, 12,540), stdev = 0,372
+  CI (99.9%): [10,618, 13,480] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.count":
+  683,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (136,000, 136,600, 137,000), stdev = 0,548
+  CI (99.9%): [683,000, 683,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.time":
+  633,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (125,000, 126,600, 128,000), stdev = 1,342
+  CI (99.9%): [633,000, 633,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose
+
+# Run progress: 76,92% complete, ETA 00:05:18
+# Fork: 1 of 1
+# Warmup Iteration   1: 40552,221 ops/s
+# Warmup Iteration   2: 41428,765 ops/s
+# Warmup Iteration   3: 41512,552 ops/s
+# Warmup Iteration   4: 41748,218 ops/s
+# Warmup Iteration   5: 41467,926 ops/s
+Iteration   1: 41289,198 ops/s
+                 ·gc.alloc.rate:                   6026,763 MB/sec
+                 ·gc.alloc.rate.norm:              160840,381 B/op
+                 ·gc.churn.G1_Eden_Space:          6010,958 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160418,580 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,356 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,512 B/op
+                 ·gc.count:                        143,000 counts
+                 ·gc.time:                         130,000 ms
+
+Iteration   2: 41702,429 ops/s
+                 ·gc.alloc.rate:                   6086,073 MB/sec
+                 ·gc.alloc.rate.norm:              160840,333 B/op
+                 ·gc.churn.G1_Eden_Space:          6095,333 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161085,057 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,356 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,409 B/op
+                 ·gc.count:                        145,000 counts
+                 ·gc.time:                         133,000 ms
+
+Iteration   3: 41844,363 ops/s
+                 ·gc.alloc.rate:                   6105,606 MB/sec
+                 ·gc.alloc.rate.norm:              160840,336 B/op
+                 ·gc.churn.G1_Eden_Space:          6137,633 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161684,029 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,375 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,880 B/op
+                 ·gc.count:                        146,000 counts
+                 ·gc.time:                         134,000 ms
+
+Iteration   4: 41583,027 ops/s
+                 ·gc.alloc.rate:                   6071,010 MB/sec
+                 ·gc.alloc.rate.norm:              160840,251 B/op
+                 ·gc.churn.G1_Eden_Space:          6056,231 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160448,713 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,365 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,663 B/op
+                 ·gc.count:                        144,000 counts
+                 ·gc.time:                         130,000 ms
+
+Iteration   5: 40764,569 ops/s
+                 ·gc.alloc.rate:                   5950,572 MB/sec
+                 ·gc.alloc.rate.norm:              160840,737 B/op
+                 ·gc.churn.G1_Eden_Space:          5965,722 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161250,215 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,370 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 9,990 B/op
+                 ·gc.count:                        142,000 counts
+                 ·gc.time:                         130,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose":
+  41436,717 ±(99.9%) 1646,943 ops/s [Average]
+  (min, avg, max) = (40764,569, 41436,717, 41844,363), stdev = 427,706
+  CI (99.9%): [39789,774, 43083,660] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.alloc.rate":
+  6048,005 ±(99.9%) 237,687 MB/sec [Average]
+  (min, avg, max) = (5950,572, 6048,005, 6105,606), stdev = 61,727
+  CI (99.9%): [5810,318, 6285,692] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.alloc.rate.norm":
+  160840,407 ±(99.9%) 0,732 B/op [Average]
+  (min, avg, max) = (160840,251, 160840,407, 160840,737), stdev = 0,190
+  CI (99.9%): [160839,675, 160841,139] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.churn.G1_Eden_Space":
+  6053,175 ±(99.9%) 260,810 MB/sec [Average]
+  (min, avg, max) = (5965,722, 6053,175, 6137,633), stdev = 67,732
+  CI (99.9%): [5792,365, 6313,985] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.churn.G1_Eden_Space.norm":
+  160977,319 ±(99.9%) 2088,892 B/op [Average]
+  (min, avg, max) = (160418,580, 160977,319, 161684,029), stdev = 542,479
+  CI (99.9%): [158888,426, 163066,211] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.churn.G1_Survivor_Space":
+  0,364 ±(99.9%) 0,032 MB/sec [Average]
+  (min, avg, max) = (0,356, 0,364, 0,375), stdev = 0,008
+  CI (99.9%): [0,332, 0,396] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.churn.G1_Survivor_Space.norm":
+  9,691 ±(99.9%) 0,938 B/op [Average]
+  (min, avg, max) = (9,409, 9,691, 9,990), stdev = 0,244
+  CI (99.9%): [8,752, 10,629] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.count":
+  720,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (142,000, 144,000, 146,000), stdev = 1,581
+  CI (99.9%): [720,000, 720,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.time":
+  657,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (130,000, 131,400, 134,000), stdev = 1,949
+  CI (99.9%): [657,000, 657,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet
+
+# Run progress: 84,62% complete, ETA 00:03:32
+# Fork: 1 of 1
+# Warmup Iteration   1: 40608,878 ops/s
+# Warmup Iteration   2: 41872,320 ops/s
+# Warmup Iteration   3: 39610,864 ops/s
+# Warmup Iteration   4: 39110,098 ops/s
+# Warmup Iteration   5: 38802,795 ops/s
+Iteration   1: 39105,485 ops/s
+                 ·gc.alloc.rate:                   5710,756 MB/sec
+                 ·gc.alloc.rate.norm:              160840,809 B/op
+                 ·gc.churn.G1_Eden_Space:          5748,923 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161915,778 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,393 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,072 B/op
+                 ·gc.count:                        135,000 counts
+                 ·gc.time:                         123,000 ms
+
+Iteration   2: 39107,429 ops/s
+                 ·gc.alloc.rate:                   5704,987 MB/sec
+                 ·gc.alloc.rate.norm:              160840,755 B/op
+                 ·gc.churn.G1_Eden_Space:          5702,308 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160765,246 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,383 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 10,800 B/op
+                 ·gc.count:                        134,000 counts
+                 ·gc.time:                         121,000 ms
+
+Iteration   3: 38984,623 ops/s
+                 ·gc.alloc.rate:                   5688,473 MB/sec
+                 ·gc.alloc.rate.norm:              160840,827 B/op
+                 ·gc.churn.G1_Eden_Space:          5710,359 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161459,656 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,382 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 10,797 B/op
+                 ·gc.count:                        134,000 counts
+                 ·gc.time:                         122,000 ms
+
+Iteration   4: 38963,665 ops/s
+                 ·gc.alloc.rate:                   5686,147 MB/sec
+                 ·gc.alloc.rate.norm:              160840,756 B/op
+                 ·gc.churn.G1_Eden_Space:          5664,994 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160242,402 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,379 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 10,719 B/op
+                 ·gc.count:                        133,000 counts
+                 ·gc.time:                         121,000 ms
+
+Iteration   5: 38973,563 ops/s
+                 ·gc.alloc.rate:                   5683,078 MB/sec
+                 ·gc.alloc.rate.norm:              160841,045 B/op
+                 ·gc.churn.G1_Eden_Space:          5698,052 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161264,832 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,400 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,318 B/op
+                 ·gc.count:                        134,000 counts
+                 ·gc.time:                         121,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet":
+  39026,953 ±(99.9%) 280,935 ops/s [Average]
+  (min, avg, max) = (38963,665, 39026,953, 39107,429), stdev = 72,958
+  CI (99.9%): [38746,018, 39307,888] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.alloc.rate":
+  5694,688 ±(99.9%) 47,576 MB/sec [Average]
+  (min, avg, max) = (5683,078, 5694,688, 5710,756), stdev = 12,355
+  CI (99.9%): [5647,113, 5742,264] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.alloc.rate.norm":
+  160840,839 ±(99.9%) 0,462 B/op [Average]
+  (min, avg, max) = (160840,755, 160840,839, 160841,045), stdev = 0,120
+  CI (99.9%): [160840,377, 160841,300] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.churn.G1_Eden_Space":
+  5704,927 ±(99.9%) 115,744 MB/sec [Average]
+  (min, avg, max) = (5664,994, 5704,927, 5748,923), stdev = 30,058
+  CI (99.9%): [5589,184, 5820,671] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.churn.G1_Eden_Space.norm":
+  161129,583 ±(99.9%) 2484,466 B/op [Average]
+  (min, avg, max) = (160242,402, 161129,583, 161915,778), stdev = 645,208
+  CI (99.9%): [158645,117, 163614,049] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.churn.G1_Survivor_Space":
+  0,387 ±(99.9%) 0,034 MB/sec [Average]
+  (min, avg, max) = (0,379, 0,387, 0,400), stdev = 0,009
+  CI (99.9%): [0,353, 0,421] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.churn.G1_Survivor_Space.norm":
+  10,942 ±(99.9%) 0,962 B/op [Average]
+  (min, avg, max) = (10,719, 10,942, 11,318), stdev = 0,250
+  CI (99.9%): [9,980, 11,903] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.count":
+  670,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (133,000, 134,000, 135,000), stdev = 0,707
+  CI (99.9%): [670,000, 670,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.time":
+  608,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (121,000, 121,600, 123,000), stdev = 0,894
+  CI (99.9%): [608,000, 608,000] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 17, Java HotSpot(TM) 64-Bit Server VM, 17+35-LTS-2724
+# VM invoker: C:\Program Files\Java\jdk-17\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\lib\idea_rt.jar=44925:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.4\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose
+
+# Run progress: 92,31% complete, ETA 00:01:46
+# Fork: 1 of 1
+# Warmup Iteration   1: 39917,299 ops/s
+# Warmup Iteration   2: 41456,853 ops/s
+# Warmup Iteration   3: 41396,942 ops/s
+# Warmup Iteration   4: 43206,078 ops/s
+# Warmup Iteration   5: 42862,305 ops/s
+Iteration   1: 42820,441 ops/s
+                 ·gc.alloc.rate:                   6241,053 MB/sec
+                 ·gc.alloc.rate.norm:              160855,902 B/op
+                 ·gc.churn.G1_Eden_Space:          6277,792 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161802,783 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,434 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,186 B/op
+                 ·gc.count:                        145,000 counts
+                 ·gc.time:                         137,000 ms
+
+Iteration   2: 42812,119 ops/s
+                 ·gc.alloc.rate:                   6243,933 MB/sec
+                 ·gc.alloc.rate.norm:              160855,840 B/op
+                 ·gc.churn.G1_Eden_Space:          6233,898 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160597,326 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,430 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,072 B/op
+                 ·gc.count:                        144,000 counts
+                 ·gc.time:                         136,000 ms
+
+Iteration   3: 42875,463 ops/s
+                 ·gc.alloc.rate:                   6248,316 MB/sec
+                 ·gc.alloc.rate.norm:              160855,881 B/op
+                 ·gc.churn.G1_Eden_Space:          6276,616 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161584,444 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,429 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,032 B/op
+                 ·gc.count:                        145,000 counts
+                 ·gc.time:                         136,000 ms
+
+Iteration   4: 42783,888 ops/s
+                 ·gc.alloc.rate:                   6236,665 MB/sec
+                 ·gc.alloc.rate.norm:              160855,792 B/op
+                 ·gc.churn.G1_Eden_Space:          6230,814 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     160704,903 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,426 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 10,988 B/op
+                 ·gc.count:                        144,000 counts
+                 ·gc.time:                         132,000 ms
+
+Iteration   5: 43268,869 ops/s
+                 ·gc.alloc.rate:                   6309,024 MB/sec
+                 ·gc.alloc.rate.norm:              160855,994 B/op
+                 ·gc.churn.G1_Eden_Space:          6326,805 MB/sec
+                 ·gc.churn.G1_Eden_Space.norm:     161309,320 B/op
+                 ·gc.churn.G1_Survivor_Space:      0,439 MB/sec
+                 ·gc.churn.G1_Survivor_Space.norm: 11,197 B/op
+                 ·gc.count:                        146,000 counts
+                 ·gc.time:                         133,000 ms
+
+
+
+Result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose":
+  42912,156 ±(99.9%) 778,416 ops/s [Average]
+  (min, avg, max) = (42783,888, 42912,156, 43268,869), stdev = 202,152
+  CI (99.9%): [42133,740, 43690,572] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.alloc.rate":
+  6255,798 ±(99.9%) 115,733 MB/sec [Average]
+  (min, avg, max) = (6236,665, 6255,798, 6309,024), stdev = 30,055
+  CI (99.9%): [6140,066, 6371,531] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.alloc.rate.norm":
+  160855,882 ±(99.9%) 0,292 B/op [Average]
+  (min, avg, max) = (160855,792, 160855,882, 160855,994), stdev = 0,076
+  CI (99.9%): [160855,590, 160856,174] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.churn.G1_Eden_Space":
+  6269,185 ±(99.9%) 151,193 MB/sec [Average]
+  (min, avg, max) = (6230,814, 6269,185, 6326,805), stdev = 39,264
+  CI (99.9%): [6117,991, 6420,378] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.churn.G1_Eden_Space.norm":
+  161199,755 ±(99.9%) 2047,941 B/op [Average]
+  (min, avg, max) = (160597,326, 161199,755, 161802,783), stdev = 531,844
+  CI (99.9%): [159151,814, 163247,696] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.churn.G1_Survivor_Space":
+  0,432 ±(99.9%) 0,020 MB/sec [Average]
+  (min, avg, max) = (0,426, 0,432, 0,439), stdev = 0,005
+  CI (99.9%): [0,412, 0,451] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.churn.G1_Survivor_Space.norm":
+  11,095 ±(99.9%) 0,358 B/op [Average]
+  (min, avg, max) = (10,988, 11,095, 11,197), stdev = 0,093
+  CI (99.9%): [10,737, 11,453] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.count":
+  724,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (144,000, 144,800, 146,000), stdev = 0,837
+  CI (99.9%): [724,000, 724,000] (assumes normal distribution)
+
+Secondary result "benchmark.LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.time":
+  674,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (132,000, 134,800, 137,000), stdev = 2,168
+  CI (99.9%): [674,000, 674,000] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:23:00
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                                                                   Mode  Cnt       Score      Error   Units
+LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose                                     thrpt    5   43013,891 ±  395,161   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.alloc.rate                      thrpt    5    6269,902 ±   64,630  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.alloc.rate.norm                 thrpt    5  160808,268 ±    0,568    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.churn.G1_Eden_Space             thrpt    5    6277,272 ±  121,662  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.churn.G1_Eden_Space.norm        thrpt    5  160997,114 ± 2424,017    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.churn.G1_Survivor_Space         thrpt    5       0,522 ±    0,034  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.churn.G1_Survivor_Space.norm    thrpt    5      13,397 ±    0,805    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.count                           thrpt    5     765,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance1NoTranspose:·gc.time                            thrpt    5     698,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance1WithHamming                                     thrpt    5   42997,498 ±  670,928   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.alloc.rate                      thrpt    5    6271,897 ±  103,679  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.alloc.rate.norm                 thrpt    5  160839,955 ±    0,421    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.churn.G1_Eden_Space             thrpt    5    6277,998 ±   74,534  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.churn.G1_Eden_Space.norm        thrpt    5  160997,128 ±  888,202    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.churn.G1_Survivor_Space         thrpt    5       0,449 ±    0,034  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.churn.G1_Survivor_Space.norm    thrpt    5      11,517 ±    0,711    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.count                           thrpt    5     734,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance1WithHamming:·gc.time                            thrpt    5     675,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet                                      thrpt    5   41332,087 ±  689,226   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.alloc.rate                       thrpt    5    6031,226 ±  102,054  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.alloc.rate.norm                  thrpt    5  160856,003 ±    0,389    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.churn.G1_Eden_Space              thrpt    5    6040,681 ±  138,305  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.churn.G1_Eden_Space.norm         thrpt    5  161107,388 ± 1247,605    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.churn.G1_Survivor_Space          thrpt    5       0,477 ±    0,028  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.churn.G1_Survivor_Space.norm     thrpt    5      12,714 ±    0,591    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.count                            thrpt    5     679,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance1WithTouzet:·gc.time                             thrpt    5     636,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose                                   thrpt    5   41225,876 ±  814,904   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.alloc.rate                    thrpt    5    6017,349 ±  123,801  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.alloc.rate.norm               thrpt    5  160856,146 ±    0,287    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.churn.G1_Eden_Space           thrpt    5    6024,282 ±  142,873  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.churn.G1_Eden_Space.norm      thrpt    5  161041,680 ± 2179,206    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.churn.G1_Survivor_Space       thrpt    5       0,438 ±    0,029  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.churn.G1_Survivor_Space.norm  thrpt    5      11,700 ±    0,735    B/op
+LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.count                         thrpt    5     689,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance1WithTranspose:·gc.time                          thrpt    5     650,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose                                     thrpt    5   41448,621 ±  507,306   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.alloc.rate                      thrpt    5    6049,157 ±   73,008  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.alloc.rate.norm                 thrpt    5  160840,204 ±    0,453    B/op
+LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.churn.G1_Eden_Space             thrpt    5    6059,291 ±  151,155  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.churn.G1_Eden_Space.norm        thrpt    5  161108,790 ± 2678,482    B/op
+LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.churn.G1_Survivor_Space         thrpt    5       0,459 ±    0,041  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.churn.G1_Survivor_Space.norm    thrpt    5      12,201 ±    1,056    B/op
+LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.count                           thrpt    5     702,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance2NoTranspose:·gc.time                            thrpt    5     658,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet                                      thrpt    5   41263,004 ±  595,158   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.alloc.rate                       thrpt    5    6020,837 ±   87,076  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.alloc.rate.norm                  thrpt    5  160841,257 ±    0,469    B/op
+LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.churn.G1_Eden_Space              thrpt    5    6028,227 ±  129,320  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.churn.G1_Eden_Space.norm         thrpt    5  161038,965 ± 2854,607    B/op
+LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.churn.G1_Survivor_Space          thrpt    5       0,375 ±    0,025  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.churn.G1_Survivor_Space.norm     thrpt    5      10,011 ±    0,730    B/op
+LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.count                            thrpt    5     793,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance2WithTouzet:·gc.time                             thrpt    5     736,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose                                   thrpt    5   38358,887 ±  728,987   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.alloc.rate                    thrpt    5    5597,962 ±  103,285  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.alloc.rate.norm               thrpt    5  160840,960 ±    0,527    B/op
+LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.churn.G1_Eden_Space           thrpt    5    5603,072 ±  112,711  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.churn.G1_Eden_Space.norm      thrpt    5  160987,688 ± 1057,328    B/op
+LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.churn.G1_Survivor_Space       thrpt    5       0,398 ±    0,045  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.churn.G1_Survivor_Space.norm  thrpt    5      11,448 ±    1,312    B/op
+LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.count                         thrpt    5     655,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance2WithTranspose:·gc.time                          thrpt    5     605,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose                                     thrpt    5   41464,705 ±  398,295   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.alloc.rate                      thrpt    5    6051,807 ±   54,527  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.alloc.rate.norm                 thrpt    5  160856,302 ±    0,411    B/op
+LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.churn.G1_Eden_Space             thrpt    5    6063,045 ±   89,361  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.churn.G1_Eden_Space.norm        thrpt    5  161154,569 ±  944,414    B/op
+LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.churn.G1_Survivor_Space         thrpt    5       0,347 ±    0,015  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.churn.G1_Survivor_Space.norm    thrpt    5       9,235 ±    0,330    B/op
+LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.count                           thrpt    5     712,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance3NoTranspose:·gc.time                            thrpt    5     662,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet                                      thrpt    5   41413,967 ±  633,282   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.alloc.rate                       thrpt    5    6043,762 ±   90,527  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.alloc.rate.norm                  thrpt    5  160840,205 ±    0,428    B/op
+LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.churn.G1_Eden_Space              thrpt    5    6049,929 ±  145,655  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.churn.G1_Eden_Space.norm         thrpt    5  161003,319 ± 1809,870    B/op
+LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.churn.G1_Survivor_Space          thrpt    5       0,450 ±    0,011  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.churn.G1_Survivor_Space.norm     thrpt    5      11,987 ±    0,246    B/op
+LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.count                            thrpt    5     701,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance3WithTouzet:·gc.time                             thrpt    5     659,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose                                   thrpt    5   41072,666 ±  409,952   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.alloc.rate                    thrpt    5    5995,856 ±   59,180  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.alloc.rate.norm               thrpt    5  160856,144 ±    0,297    B/op
+LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.churn.G1_Eden_Space           thrpt    5    5999,631 ±   96,715  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.churn.G1_Eden_Space.norm      thrpt    5  160957,938 ± 2702,097    B/op
+LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.churn.G1_Survivor_Space       thrpt    5       0,449 ±    0,054  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.churn.G1_Survivor_Space.norm  thrpt    5      12,049 ±    1,431    B/op
+LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.count                         thrpt    5     683,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance3WithTranspose:·gc.time                          thrpt    5     633,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose                                     thrpt    5   41436,717 ± 1646,943   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.alloc.rate                      thrpt    5    6048,005 ±  237,687  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.alloc.rate.norm                 thrpt    5  160840,407 ±    0,732    B/op
+LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.churn.G1_Eden_Space             thrpt    5    6053,175 ±  260,810  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.churn.G1_Eden_Space.norm        thrpt    5  160977,319 ± 2088,892    B/op
+LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.churn.G1_Survivor_Space         thrpt    5       0,364 ±    0,032  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.churn.G1_Survivor_Space.norm    thrpt    5       9,691 ±    0,938    B/op
+LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.count                           thrpt    5     720,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance4NoTranspose:·gc.time                            thrpt    5     657,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet                                      thrpt    5   39026,953 ±  280,935   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.alloc.rate                       thrpt    5    5694,688 ±   47,576  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.alloc.rate.norm                  thrpt    5  160840,839 ±    0,462    B/op
+LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.churn.G1_Eden_Space              thrpt    5    5704,927 ±  115,744  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.churn.G1_Eden_Space.norm         thrpt    5  161129,583 ± 2484,466    B/op
+LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.churn.G1_Survivor_Space          thrpt    5       0,387 ±    0,034  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.churn.G1_Survivor_Space.norm     thrpt    5      10,942 ±    0,962    B/op
+LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.count                            thrpt    5     670,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance4WithTouzet:·gc.time                             thrpt    5     608,000                 ms
+LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose                                   thrpt    5   42912,156 ±  778,416   ops/s
+LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.alloc.rate                    thrpt    5    6255,798 ±  115,733  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.alloc.rate.norm               thrpt    5  160855,882 ±    0,292    B/op
+LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.churn.G1_Eden_Space           thrpt    5    6269,185 ±  151,193  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.churn.G1_Eden_Space.norm      thrpt    5  161199,755 ± 2047,941    B/op
+LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.churn.G1_Survivor_Space       thrpt    5       0,432 ±    0,020  MB/sec
+LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.churn.G1_Survivor_Space.norm  thrpt    5      11,095 ±    0,358    B/op
+LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.count                         thrpt    5     724,000             counts
+LevenshteinBenchmark.benchBuildDfaDistance4WithTranspose:·gc.time                          thrpt    5     674,000                 ms
