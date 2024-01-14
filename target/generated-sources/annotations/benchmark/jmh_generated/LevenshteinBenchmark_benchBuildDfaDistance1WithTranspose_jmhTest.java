@@ -115,6 +115,7 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance1WithTranspose_jmhT
                 try {
                     if (control.isFailing) throw new FailureAssistException();
                     if (l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.tearDown();
                         l_levenshteinbenchmark0_G.readyIteration = false;
                     }
                 } catch (Throwable t) {
@@ -135,7 +136,7 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance1WithTranspose_jmhT
                     try {
                         if (control.isFailing) throw new FailureAssistException();
                         if (l_levenshteinbenchmark0_G.readyTrial) {
-                            l_levenshteinbenchmark0_G.tearDown();
+                            l_levenshteinbenchmark0_G.tearDownTrial();
                             l_levenshteinbenchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
@@ -243,6 +244,7 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance1WithTranspose_jmhT
                 try {
                     if (control.isFailing) throw new FailureAssistException();
                     if (l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.tearDown();
                         l_levenshteinbenchmark0_G.readyIteration = false;
                     }
                 } catch (Throwable t) {
@@ -263,7 +265,7 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance1WithTranspose_jmhT
                     try {
                         if (control.isFailing) throw new FailureAssistException();
                         if (l_levenshteinbenchmark0_G.readyTrial) {
-                            l_levenshteinbenchmark0_G.tearDown();
+                            l_levenshteinbenchmark0_G.tearDownTrial();
                             l_levenshteinbenchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
@@ -375,6 +377,7 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance1WithTranspose_jmhT
                 try {
                     if (control.isFailing) throw new FailureAssistException();
                     if (l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.tearDown();
                         l_levenshteinbenchmark0_G.readyIteration = false;
                     }
                 } catch (Throwable t) {
@@ -395,7 +398,7 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance1WithTranspose_jmhT
                     try {
                         if (control.isFailing) throw new FailureAssistException();
                         if (l_levenshteinbenchmark0_G.readyTrial) {
-                            l_levenshteinbenchmark0_G.tearDown();
+                            l_levenshteinbenchmark0_G.tearDownTrial();
                             l_levenshteinbenchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
@@ -504,6 +507,7 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance1WithTranspose_jmhT
                 try {
                     if (control.isFailing) throw new FailureAssistException();
                     if (l_levenshteinbenchmark0_G.readyIteration) {
+                        l_levenshteinbenchmark0_G.tearDown();
                         l_levenshteinbenchmark0_G.readyIteration = false;
                     }
                 } catch (Throwable t) {
@@ -524,7 +528,7 @@ public final class LevenshteinBenchmark_benchBuildDfaDistance1WithTranspose_jmhT
                     try {
                         if (control.isFailing) throw new FailureAssistException();
                         if (l_levenshteinbenchmark0_G.readyTrial) {
-                            l_levenshteinbenchmark0_G.tearDown();
+                            l_levenshteinbenchmark0_G.tearDownTrial();
                             l_levenshteinbenchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
