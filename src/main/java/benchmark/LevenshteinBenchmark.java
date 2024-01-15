@@ -187,10 +187,11 @@ public class LevenshteinBenchmark {
         Options opt = new OptionsBuilder()
                 .include(LevenshteinBenchmark.class.getSimpleName())
                 .addProfiler(GCProfiler.class)
-                .output("benchmark_results_Levenshtein_14.txt")
+                .output("Testing/benchmark_results_Levenshtein_14.txt")
                 .forks(1)
                 .build();
 
         new Runner(opt).run();
+        BenchmarkDataToExcel.main(args);
     }
 }
