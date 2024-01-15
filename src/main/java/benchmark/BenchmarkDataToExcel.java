@@ -9,8 +9,8 @@ import java.util.regex.*;
 
 public class BenchmarkDataToExcel {
     public static void main(String[] args) {
-        String benchmarkName = "Levenshtein";
-        int numFile = 14;
+        String benchmarkName = "bar";
+        int numFile = 15;
         Map<String, List<Double>> memoryUsageByBenchmark = new HashMap<>();
         for (int i = 1; i <= numFile; i++) {
             String inputFilePath = "benchmark_results_" + benchmarkName + "_" + i + ".txt";
