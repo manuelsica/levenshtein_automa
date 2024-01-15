@@ -33,14 +33,15 @@ public class LevenshteinBenchmark {
     private ParametricDFA parametricDfaDistance3WithTranspose;
     private ParametricDFA parametricDfaDistance4WithTranspose;
 
-
+    private static int i = 6;
+    private static String benchmarkName = "bar";
     private MemoryMXBean memoryBean;
     private long beforeMemory;
     private long afterMemory;
     private String currentBenchmarkMethod;
 
     private PrintWriter memoryOutputWriter;
-    private String memoryOutputFile = "memory_usage_results_bar_2.txt";
+    private String memoryOutputFile = "memory_usage_results_" + benchmarkName + "_" + i + ".txt";
     @Setup(Level.Iteration)
     public void setup() {
         parametricDfaDistance1NoTranspose = ParametricDFA.fromNFA(new LevenshteinNFA(1, false , false, false));
@@ -187,7 +188,7 @@ public class LevenshteinBenchmark {
         Options opt = new OptionsBuilder()
                 .include(LevenshteinBenchmark.class.getSimpleName())
                 .addProfiler(GCProfiler.class)
-                .output("Testing/benchmark_results_bar_2_output.txt")
+                .output("Testing/benchmark_results_" + benchmarkName + "_" + i + ".txt")
                 .forks(1)
                 .build();
 

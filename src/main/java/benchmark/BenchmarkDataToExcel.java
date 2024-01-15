@@ -41,6 +41,14 @@ public class BenchmarkDataToExcel {
                 // Pattern per estrarre i dati di benchmark
                 Pattern benchmarkPattern = Pattern.compile("^(.*?)(:·gc.*?)?\\s+(\\w+)\\s+(\\d+)\\s+([\\d,.]+)\\s±\\s+([\\d,.]+)\\s+(\\w+/s)$");
                 Pattern newBenchmarkPattern = Pattern.compile("^(.*?):·(\\S+)\\s+(\\w+)\\s+(\\d+)\\s+([\\d,.]+)\\s±\\s+([\\d,.]+)\\s+(\\w+/\\w+\\s*\\w*)$");
+                /*
+                double minAllocRate = Double.MAX_VALUE;
+                double minAllocRateNorm = Double.MAX_VALUE;
+                Row minAllocRateRow = null;
+                Row minAllocRateNormRow = null;*
+                */
+
+
                 String line;
                 while ((line = reader.readLine()) != null) {
                     //System.out.println("Line read: " + line); // Stampa la riga letta
@@ -58,6 +66,11 @@ public class BenchmarkDataToExcel {
                             //System.out.println("Group captured: " + group); // Stampa il gruppo catturato
                             row.createCell(j - shiftAmount).setCellValue(group);
                         }
+                        /*double allocRate = Double.parseDouble(oldMatcher.group(5).replace(",", ""));
+                        if (allocRate < minAllocRate) {
+                            minAllocRate = allocRate;
+                            minAllocRateRow = row;
+                        }*/
                     } else if (newMatcher.matches()) {
                         // Gestisci i nuovi dati di benchmark
                         Row row = benchmarkSheet.createRow(rowNum++);
@@ -70,8 +83,31 @@ public class BenchmarkDataToExcel {
                             //System.out.println("Group captured: " + group); // Stampa il gruppo catturato
                             row.createCell(j - shiftAmount).setCellValue(group);
                         }
+                        /*double allocRateNorm = Double.parseDouble(newMatcher.group(5).replace(",", ""));
+                        if (allocRateNorm < minAllocRateNorm) {
+                            minAllocRateNorm = allocRateNorm;
+                            minAllocRateNormRow = row;
+                        }*/
                     }
                 }
+
+                /*if (minAllocRateRow != null) {
+                    Cell unitCell = minAllocRateRow.getCell(6);
+                    if (unitCell == null) {
+                        unitCell = minAllocRateRow.createCell(6);
+                    }
+                    unitCell.setCellValue("THE BEST");
+                }
+
+                // Aggiungi "THE BEST" alla colonna "Units" per il valore minimo di gc.alloc.rate.norm
+                if (minAllocRateNormRow != null) {
+                    Cell unitCell = minAllocRateNormRow.getCell(6);
+                    if (unitCell == null) {
+                        unitCell = minAllocRateNormRow.createCell(6);
+                    }
+                    unitCell.setCellValue("THE BEST");
+                }*/
+
                 // Crea il foglio di lavoro per i dati di utilizzo della memoria
                 Sheet memorySheet = workbook.createSheet("Memory Usage Data");
                 rowNum = 0;
