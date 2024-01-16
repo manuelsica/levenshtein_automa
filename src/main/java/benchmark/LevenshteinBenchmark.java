@@ -33,7 +33,7 @@ public class LevenshteinBenchmark {
     private ParametricDFA parametricDfaDistance3WithTranspose;
     private ParametricDFA parametricDfaDistance4WithTranspose;
 
-    private static int i = 6;
+    private static int i = 15;
     private static String benchmarkName = "bar";
     private MemoryMXBean memoryBean;
     private long beforeMemory;
