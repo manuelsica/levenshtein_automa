@@ -41,13 +41,6 @@ public class BenchmarkDataToExcel {
                 // Pattern per estrarre i dati di benchmark
                 Pattern benchmarkPattern = Pattern.compile("^(.*?)(:·gc.*?)?\\s+(\\w+)\\s+(\\d+)\\s+([\\d,.]+)\\s±\\s+([\\d,.]+)\\s+(\\w+/s)$");
                 Pattern newBenchmarkPattern = Pattern.compile("^(.*?):·(\\S+)\\s+(\\w+)\\s+(\\d+)\\s+([\\d,.]+)\\s±\\s+([\\d,.]+)\\s+(\\w+/\\w+\\s*\\w*)$");
-                /*
-                double minAllocRate = Double.MAX_VALUE;
-                double minAllocRateNorm = Double.MAX_VALUE;
-                Row minAllocRateRow = null;
-                Row minAllocRateNormRow = null;*
-                */
-
 
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -66,11 +59,6 @@ public class BenchmarkDataToExcel {
                             //System.out.println("Group captured: " + group); // Stampa il gruppo catturato
                             row.createCell(j - shiftAmount).setCellValue(group);
                         }
-                        /*double allocRate = Double.parseDouble(oldMatcher.group(5).replace(",", ""));
-                        if (allocRate < minAllocRate) {
-                            minAllocRate = allocRate;
-                            minAllocRateRow = row;
-                        }*/
                     } else if (newMatcher.matches()) {
                         // Gestisci i nuovi dati di benchmark
                         Row row = benchmarkSheet.createRow(rowNum++);
@@ -83,30 +71,8 @@ public class BenchmarkDataToExcel {
                             //System.out.println("Group captured: " + group); // Stampa il gruppo catturato
                             row.createCell(j - shiftAmount).setCellValue(group);
                         }
-                        /*double allocRateNorm = Double.parseDouble(newMatcher.group(5).replace(",", ""));
-                        if (allocRateNorm < minAllocRateNorm) {
-                            minAllocRateNorm = allocRateNorm;
-                            minAllocRateNormRow = row;
-                        }*/
                     }
                 }
-
-                /*if (minAllocRateRow != null) {
-                    Cell unitCell = minAllocRateRow.getCell(6);
-                    if (unitCell == null) {
-                        unitCell = minAllocRateRow.createCell(6);
-                    }
-                    unitCell.setCellValue("THE BEST");
-                }
-
-                // Aggiungi "THE BEST" alla colonna "Units" per il valore minimo di gc.alloc.rate.norm
-                if (minAllocRateNormRow != null) {
-                    Cell unitCell = minAllocRateNormRow.getCell(6);
-                    if (unitCell == null) {
-                        unitCell = minAllocRateNormRow.createCell(6);
-                    }
-                    unitCell.setCellValue("THE BEST");
-                }*/
 
                 // Crea il foglio di lavoro per i dati di utilizzo della memoria
                 Sheet memorySheet = workbook.createSheet("Memory Usage Data");
@@ -138,7 +104,7 @@ public class BenchmarkDataToExcel {
                     }
                 }
                 // Rimuovi il vecchio foglio "Average Memory Usage" se esiste
-                int index = workbook.getSheetIndex("Average Memory Usage");
+                int index = workbook.getSheetIndex("Memory Usage Data");
                 if (index != -1) {
                     workbook.removeSheetAt(index);
                 }
@@ -204,9 +170,20 @@ public class BenchmarkDataToExcel {
                     row.createCell(0).setCellValue(benchmark);
                     row.createCell(1).setCellValue(average);
                 }
+                //Set larghezza colonne
+                for (int j = 0; j < headers.length; j++) {
+                    benchmarkSheet.autoSizeColumn(j);
+                }
+                for (int j = 0; j < headers.length; j++) {
+                    memorySheet.autoSizeColumn(j);
+                }
+
+                for (int j = 0; j < 2; j++) {
+                    averageSheet.autoSizeColumn(j);
+                }
                 // Scrivi il file Excel
                 workbook.write(fileOut);
-                System.out.println("Dati esportati con successo in " + outputFilePath);
+                System.err.println("Dati esportati con successo in " + outputFilePath);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -234,6 +211,7 @@ public class BenchmarkDataToExcel {
                 e.printStackTrace();
             }
         }
+        ExtractOptimal.main(args);
     }
 }
 
