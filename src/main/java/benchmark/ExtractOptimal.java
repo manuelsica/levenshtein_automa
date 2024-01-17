@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class ExtractOptimal {
     static String benchmarkName = "bar";
-    static int i = 15;
+    static int i = 30;
     public static void main(String[] args) {
         for (int count = 1; count <= i; count++) {
             try {

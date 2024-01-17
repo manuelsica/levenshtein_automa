@@ -10,7 +10,7 @@ import java.util.regex.*;
 public class BenchmarkDataToExcel {
     public static void main(String[] args) {
         String benchmarkName = "bar";
-        int numFile = 15;
+        int numFile = 30;
         Map<String, List<Double>> memoryUsageByBenchmark = new HashMap<>();
         for (int i = 1; i <= numFile; i++) {
             String inputFilePath = "benchmark_results_" + benchmarkName + "_" + i + ".txt";
@@ -173,6 +173,7 @@ public class BenchmarkDataToExcel {
                 //Set larghezza colonne
                 for (int j = 0; j < headers.length; j++) {
                     benchmarkSheet.autoSizeColumn(j);
+                    newAverageSheet.autoSizeColumn(j);
                 }
                 for (int j = 0; j < headers.length; j++) {
                     memorySheet.autoSizeColumn(j);

@@ -5,14 +5,18 @@ import org.openjdk.jmh.profile.GCProfiler;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.TimeValue;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;
+import java.util.concurrent.TimeUnit;
 
 @State(Scope.Benchmark)
+@Warmup(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
+@Measurement(iterations = 20, time = 1, timeUnit = TimeUnit.SECONDS)
 public class LevenshteinBenchmark {
 
     private ParametricDFA parametricDfaDistance1NoTranspose;
@@ -33,7 +37,7 @@ public class LevenshteinBenchmark {
     private ParametricDFA parametricDfaDistance3WithTranspose;
     private ParametricDFA parametricDfaDistance4WithTranspose;
 
-    private static int i = 15;
+    private static int i = 19;
     private static String benchmarkName = "bar";
     private MemoryMXBean memoryBean;
     private long beforeMemory;
@@ -184,15 +188,25 @@ public class LevenshteinBenchmark {
     }
     // Metodo main per eseguire i benchmark
     public static void main(String[] args) throws Exception {
+        int numberOfFiles = 20;
         System.err.println("Testing Iniziato");
-        Options opt = new OptionsBuilder()
-                .include(LevenshteinBenchmark.class.getSimpleName())
-                .addProfiler(GCProfiler.class)
-                .output("Testing/benchmark_results_" + benchmarkName + "_" + i + ".txt")
-                .forks(1)
-                .build();
+        for (int j = 0; j < numberOfFiles; j++) {
+            Options opt = new OptionsBuilder()
+                    .include(LevenshteinBenchmark.class.getSimpleName())
+                    .addProfiler(GCProfiler.class)
+                    .output("Testing/benchmark_results_" + benchmarkName + "_" + i + ".txt")
+                    //-XX:+UseG1GC  Riduzione del garbage collector (GC) noise
+                    //-Djava.compiler=NONE Disabilitare le ottimizzazioni del compilatore JIT che potrebbero falsare i risultati
+                    //-XX:-EliminateAllocations ottimizzazioni del compilatore
+                    .jvmArgs("-XX:+UseG1GC", "-Djava.compiler=NONE", "-XX:-EliminateAllocations")
+                    .forks(3)
+                    .shouldDoGC(true) //Risultati statistici forzare il garbage collection tra le iterazione
+                    .measurementTime(TimeValue.seconds(1)) //tempo fisso per ogni iterazione di misurazione
+                    .build();
 
-        new Runner(opt).run();
-        BenchmarkDataToExcel.main(args);
+            new Runner(opt).run();
+            BenchmarkDataToExcel.main(args);
+            i++;
+        }
     }
 }
