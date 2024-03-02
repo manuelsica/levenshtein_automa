@@ -9,7 +9,7 @@ import java.util.regex.*;
 
 public class BenchmarkDataToExcel {
     public static void main(String[] args) {
-        String benchmarkName = "bar";
+        String benchmarkName = "levenshtein";
         int numFile = 30;
         Map<String, List<Double>> memoryUsageByBenchmark = new HashMap<>();
         for (int i = 1; i <= numFile; i++) {

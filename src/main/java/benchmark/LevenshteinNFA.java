@@ -91,7 +91,6 @@ public class LevenshteinNFA {
                 multistate.addState(new NFAState(state.getOffset() + 1, state.getDistance(), false));
             } else {
                 // Se non c'è stata una cancellazione o se Touzet è disattivato, procediamo con le altre operazioni
-
                 // Inserimento
                 if (!similHamming) {
                     multistate.addState(new NFAState(state.getOffset(), state.getDistance() + 1, false));

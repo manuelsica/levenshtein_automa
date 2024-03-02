@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class ExtractOptimal {
-    static String benchmarkName = "bar";
+    static String benchmarkName = "levenshtein";
     static int i = 30;
     public static void main(String[] args) {
         for (int count = 1; count <= i; count++) {
